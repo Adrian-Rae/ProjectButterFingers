@@ -3,7 +3,7 @@
 ShippingContainer::ShippingContainer()
 {
 	cout<<"Shipping Container has been created!"<<endl;
-	this->status = "has been packed";
+	status.push_back("has been packed");
 	
 }
 
@@ -14,7 +14,7 @@ void ShippingContainer::setgarageEquipment(string gEquip)
 
 vector<string> ShippingContainer::getgarageEquipment()
 {
-	return garageEquipment + " " + status;
+	return garageEquipment + status;
 }
 
 void ShippingContainer::setcateringEquipment(string cEquip)
@@ -24,7 +24,7 @@ void ShippingContainer::setcateringEquipment(string cEquip)
 
 vector<string> ShippingContainer::getcateringEquipment()
 {
-	return cateringEquipment + " " + status;
+	return cateringEquipment + status;
 }
 
 void ShippingContainer::setotherEquipment(string oEquip)
@@ -34,7 +34,7 @@ void ShippingContainer::setotherEquipment(string oEquip)
 
 vector<string> ShippingContainer::getotherEquipment()
 {
-	return otherEquipment + " " + status;
+	return otherEquipment + status;
 }
 
 string ShippingContainer::TypeofTransporter()
