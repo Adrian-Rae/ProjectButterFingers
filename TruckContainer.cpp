@@ -3,7 +3,7 @@
 TruckContainer::TruckContainer()
 {
 	cout<<"Truck Container has been created!"<<endl;
-	this->status = "has been packed";
+	status.push_back("has been packed");
 	
 }
 
@@ -14,7 +14,7 @@ void TruckContainer::setgarageEquipment(string gEquip)
 
 vector<string> TruckContainer::getgarageEquipment()
 {
-	return garageEquipment + " " + status;
+	return garageEquipment + status;
 }
 
 void TruckContainer::setcateringEquipment(string cEquip)
@@ -24,7 +24,7 @@ void TruckContainer::setcateringEquipment(string cEquip)
 
 vector<string> TruckContainer::getcateringEquipment()
 {
-	return cateringEquipment + " " + status;
+	return cateringEquipment + status;
 }
 
 void TruckContainer::setotherEquipment(string oEquip)
@@ -34,7 +34,7 @@ void TruckContainer::setotherEquipment(string oEquip)
 
 vector<string> TruckContainer::getotherEquipment()
 {
-	return otherEquipment + " " + status;
+	return otherEquipment + status;
 }
 
 string TruckContainer::TypeofTransporter()
