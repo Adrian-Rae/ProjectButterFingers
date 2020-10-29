@@ -8,7 +8,7 @@
 class TruckContainer : public Transporter {
 	
 	private: 
-		string status;
+		vector<string> status;
 
 	public:
 	  	
