@@ -1,7 +1,10 @@
 #ifndef MORNINGPRACTISE_H
 #define MORNINGPRACTISE_H
+#include "RaceDecorator.h"
+#include "RaceState.h"
+#include <iostream>
 
-class MorningPractise : RaceDecorator {
+class MorningPractise : public RaceDecorator {
 
 
 public:

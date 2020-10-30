@@ -17,14 +17,19 @@ class Transporter
 	public:
 
 		Transporter();
-		//virtual ~Transporter(){};
-	 	virtual void setgarageEquipment(string) = 0;
-	 	virtual vector<string> getgarageEquipment() = 0;
-	 	virtual void setcateringEquipment(string) = 0;
-	 	virtual vector<string> getcateringEquipment() = 0;
-	 	virtual void setotherEquipment(string) = 0;
-	 	virtual vector<string> getotherEquipment() = 0;
-	 	virtual string TypeofTransporter() = 0;
+		~Transporter(){};
+
+	  	virtual void setGarageEquipment(vector<string>) = 0;
+		virtual void addGarageEquipment(string)= 0;
+	 	virtual vector<string> getGarageEquipment()= 0;
+
+	 	virtual void setCateringEquipment(vector<string>)= 0;
+		virtual void addCateringEquipment(string)= 0;
+	 	virtual vector<string> getCateringEquipment()= 0;
+
+	 	virtual void setOtherEquipment(vector<string>)= 0;
+		virtual void addOtherEquipment(string)= 0;
+	 	virtual vector<string> getOtherEquipment()= 0;
 	
 
 

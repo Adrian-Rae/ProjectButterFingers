@@ -12,7 +12,7 @@ class AbstractFactory {
  public:
 
  		AbstractFactory();
- 		//~AbstractFactory();
+ 		~AbstractFactory(){};
 		 virtual Transporter* CreateTransporter()= 0;
 
 };

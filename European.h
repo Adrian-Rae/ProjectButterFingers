@@ -3,6 +3,8 @@
 #include <string>
 #include <iostream>
 #include "AbstractFactory.h"
+#include "Transporter.h"
+#include "TruckContainer.h"
 
 class European : public AbstractFactory {
  
@@ -12,8 +14,8 @@ class European : public AbstractFactory {
  public:
 	  
 	  European();
-	  TruckContainer* CreateTransporter();
-	  //Transporter* CreateTransporter();  
+	  //TruckContainer* CreateTransporter();
+	  Transporter* CreateTransporter();  
 
 
 };

@@ -1,11 +1,14 @@
 #include "MorningPractise.h"
-MorningPractise::MorningPractise(RaceState* s)
-{component=s;
-	}
+
+using namespace std;
+
+MorningPractise::MorningPractise(RaceState* s){
+	setComponent(s);
+}
 
 void MorningPractise::handle() {
-	component->handle();
-	this->addFunctionlity();
+	RaceDecorator::handle();
+	addFunctionlity();
 }
 
 void MorningPractise::addFunctionlity() {

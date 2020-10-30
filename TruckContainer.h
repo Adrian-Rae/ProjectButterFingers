@@ -4,21 +4,25 @@
 #include <iostream>
 #include "Transporter.h"
 
+using namespace std;
 
 class TruckContainer : public Transporter {
 	
 	private: 
-		vector<string> status;
+		//vector<string> status;
 
 	public:
 	  	
 	  	TruckContainer();
-	  	void setgarageEquipment(string);
-	 	vector<string> getgarageEquipment();
-	 	void setcateringEquipment(string);
-	 	vector<string> getcateringEquipment();
-	 	void setotherEquipment(string);
-	 	vector<string> getotherEquipment();
+	  	void addGarageEquipment(string);
+		void setGarageEquipment(vector<string>);
+	 	vector<string> getGarageEquipment();
+	 	void addCateringEquipment(string);
+		void setCateringEquipment(vector<string>);
+	 	vector<string> getCateringEquipment();
+	 	void addOtherEquipment(string);
+		void setOtherEquipment(vector<string>);
+	 	vector<string> getOtherEquipment();
 	 	string TypeofTransporter();
 
 };

@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "Abstractfactory.h"
+#include "Transporter.h"
 
 class Logistics {
  
@@ -14,8 +15,9 @@ class Logistics {
  public:
 
  		Logistics();
- 		Logisitcs(string);
-		Transporter* requestContainer();
+ 		Logistics(string);
+		virtual Transporter* requestContainer();
+		virtual Transporter* createTransporter() = 0;
 		//AbstractFactory getFactory();
 
 };

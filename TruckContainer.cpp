@@ -3,43 +3,57 @@
 TruckContainer::TruckContainer()
 {
 	cout<<"Truck Container has been created!"<<endl;
-	status.push_back("has been packed");
+	//status.push_back("has been packed");
 	
 }
 
-void TruckContainer::setgarageEquipment(string gEquip)
+void TruckContainer::addGarageEquipment(string gEquip)
 {
 	garageEquipment.push_back(gEquip);
 }
 
-vector<string> TruckContainer::getgarageEquipment()
+void TruckContainer::setGarageEquipment(vector<string> gEquip)
 {
-	return garageEquipment + status;
+	garageEquipment = gEquip;
 }
 
-void TruckContainer::setcateringEquipment(string cEquip)
+vector<string> TruckContainer::getGarageEquipment()
+{
+	return garageEquipment;// + status;
+}
+
+void TruckContainer::addCateringEquipment(string cEquip)
 {
 	cateringEquipment.push_back(cEquip);
 }
 
-vector<string> TruckContainer::getcateringEquipment()
+void TruckContainer::setCateringEquipment(vector<string> cEquip)
 {
-	return cateringEquipment + status;
+	cateringEquipment = cEquip;
 }
 
-void TruckContainer::setotherEquipment(string oEquip)
+vector<string> TruckContainer::getCateringEquipment()
+{
+	return cateringEquipment;// + status;
+}
+
+void TruckContainer::addOtherEquipment(string oEquip)
 {
 	otherEquipment.push_back(oEquip);
 }
 
-vector<string> TruckContainer::getotherEquipment()
+void TruckContainer::setOtherEquipment(vector<string> oEquip)
 {
-	return otherEquipment + status;
+	otherEquipment = oEquip;
+}
+vector<string> TruckContainer::getOtherEquipment()
+{
+	return otherEquipment;// + status;
 }
 
 string TruckContainer::TypeofTransporter()
 {
 	string type;
-	type = "Truck Container has been specifically created for European races"
+	type = "Truck Container has been specifically created for European races";
 	return type;
 }

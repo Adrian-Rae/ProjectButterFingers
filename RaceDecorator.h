@@ -2,14 +2,19 @@
 #define RACEDECORATOR_H
 #include "RaceState.h"
 
-class RaceDecorator : RaceState {
+class RaceDecorator : public RaceState {
 
-public:
+private:
 	RaceState* component;
 
-	virtual void handle() = 0;
+public:
+	RaceDecorator();
+	~RaceDecorator(){};
+
+	virtual void handle();
 
 	virtual void addFunctionlity() = 0;
+	void setComponent(RaceState*);
 };
 
 #endif

@@ -1,11 +1,12 @@
 #include "Friday.h"
-#include "RaceState.h"
+
+using namespace std;
 
 void Friday::handle() {
 	cout<<"Its Friday! "<<endl;
 }
 
 RaceState* Friday::nextState() {
-	Saturday* state=new Saturday();
+	RaceState* state = new Saturday();
 	return state;
 }

@@ -1,19 +1,23 @@
 #include "European.h"
 
+using namespace std;
 
 European::European()
 {	
-	AbstractFactory();//not sure about this
-	cout<<"European Factory has been created"<<endl;
+	//AbstractFactory(); is not needed
+	cout << "European Factory has been created" << endl;
 }
 
+/*
 TruckContainer* European::CreateTransporter()
 {
 	return new TruckContainer;
 }
+*/
 
-/*Transporter* European::CreateTransporter()
+Transporter* European::CreateTransporter()
 {
-	return new TruckContainer();
+	TruckContainer* truck = new TruckContainer();
+
+	return truck;
 } 
-*/ 

@@ -1,11 +1,14 @@
 #include "AfternoonQualifying.h"
-AfternoonQualifying::AfternoonQualifying(RaceState* s)
-{component=s;
-	}
+
+using namespace std;
+
+AfternoonQualifying::AfternoonQualifying(RaceState* s){
+	setComponent(s);
+}
 
 
 void AfternoonQualifying::handle() {
-	component->handle();
+	RaceDecorator::handle();
 	this->addFunctionlity();
 }
 

@@ -1,12 +1,13 @@
 #include "RaceDay.h"
-RaceDay::RaceDay(RaceState* s)
-{component=s;
-	}
 
+using namespace std;
 
+RaceDay::RaceDay(RaceState* s){
+	setComponent(s);
+}
 
 void RaceDay::handle() {
-	component->handle();
+	RaceDecorator::handle();
 	this->addFunctionlity();
 }
 

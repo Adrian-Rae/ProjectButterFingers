@@ -1,15 +1,17 @@
 #include "NonEuropean.h"
 
+using namespace std;
 
 NonEuropean::NonEuropean()
 {	
-	AbstractFactory();//not sure about this
+	//AbstractFactory(); not sure about this
 	cout<<"Non-European Factory has been created"<<endl;
 }
 
-ShippingContainer* NonEuropean::CreateTransporter()
+Transporter* NonEuropean::CreateTransporter()
 {
-	return new ShippingContainer;
+	Transporter* container = new ShippingContainer();
+	return container;
 }
 
 /*Transporter* NonEuropean::CreateTransporter()

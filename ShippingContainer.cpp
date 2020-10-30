@@ -1,45 +1,62 @@
 #include "ShippingContainer.h"
 
+using namespace std;
+
 ShippingContainer::ShippingContainer()
 {
 	cout<<"Shipping Container has been created!"<<endl;
-	status.push_back("has been packed");
+	//status.push_back("has been packed");
 	
 }
 
-void ShippingContainer::setgarageEquipment(string gEquip)
+void ShippingContainer::addGarageEquipment(string gEquip)
 {
 	garageEquipment.push_back(gEquip);
 }
 
-vector<string> ShippingContainer::getgarageEquipment()
+void ShippingContainer::setGarageEquipment(vector<string> gEquip)
 {
-	return garageEquipment + status;
+	garageEquipment = gEquip;
 }
 
-void ShippingContainer::setcateringEquipment(string cEquip)
+vector<string> ShippingContainer::getGarageEquipment()
+{
+	return garageEquipment;
+}
+
+void ShippingContainer::addCateringEquipment(string cEquip)
 {
 	cateringEquipment.push_back(cEquip);
 }
 
-vector<string> ShippingContainer::getcateringEquipment()
+void ShippingContainer::setCateringEquipment(vector<string> cEquip)
 {
-	return cateringEquipment + status;
+	cateringEquipment = cEquip;
 }
 
-void ShippingContainer::setotherEquipment(string oEquip)
+vector<string> ShippingContainer::getCateringEquipment()
+{
+	return cateringEquipment;// + status;
+}
+
+void ShippingContainer::addOtherEquipment(string oEquip)
 {
 	otherEquipment.push_back(oEquip);
 }
 
-vector<string> ShippingContainer::getotherEquipment()
+void ShippingContainer::setOtherEquipment(vector<string> oEquip)
 {
-	return otherEquipment + status;
+	otherEquipment = oEquip;
+}
+
+vector<string> ShippingContainer::getOtherEquipment()
+{
+	return otherEquipment;// + status;
 }
 
 string ShippingContainer::TypeofTransporter()
 {
 	string type;
-	type = "Shipping Container has been specifically created for NonEuropean races"
+	type = "Shipping Container has been specifically created for NonEuropean races";
 	return type;
 }

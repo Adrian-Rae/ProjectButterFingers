@@ -1,20 +1,26 @@
 #include "Logistics.h"
 
+using namespace std;
 
 Logistics::Logistics()
 {
 	cout<<"Team has requested a container to be prepared"<<endl;
-	//this->raceType = "None";
 	raceType = "None";
 
 }
 
-Logistics::Logisitcs(string race)
+Logistics::Logistics(string race)
 {
 	cout<<"Team has requested a container to be prepared"<<endl;
-	//this->raceType = race;
 	raceType = race;
 }
+
+Transporter* Logistics::requestContainer(){ // this is how to call for the container in a child
+	return createTransporter();
+}
+
+/* This is not how the implementation works, we are using inheritance to choose which type of container to make, it is the responsibility of team to make an object of type European
+or of type nonEuropean in the first place, this logic belongs in that class. The golden rule of inheritance is that it is a one way street, don't reference children in the parent.
 
 Transporter* Logistics::requestContainer()
 {
@@ -36,7 +42,7 @@ Transporter* Logistics::requestContainer()
 
 }
 
-/*AbstractFactory Logistics::getFactory(string raceType)
+AbstractFactory Logistics::getFactory(string raceType)
 {
 	if(raceType == "European")
 	{
@@ -54,4 +60,5 @@ Transporter* Logistics::requestContainer()
 		return factory;
 	}
 
-*///matches the commented out code in other sections
+*/
+//matches the commented out code in other sections

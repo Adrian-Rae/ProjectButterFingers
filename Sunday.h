@@ -1,8 +1,9 @@
 #ifndef SUNDAY_H
 #define SUNDAY_H
 #include "RaceState.h"
+#include <iostream>
 
-class Sunday : RaceState {
+class Sunday : public RaceState {
 
 
 public:
