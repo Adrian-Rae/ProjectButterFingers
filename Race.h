@@ -12,16 +12,16 @@ class Race : public Aggregate {
 private:
 	int teamCount;
 protected:
-	static int numRaces = 0;	//keeps track of how many races have been created - only E and NE races update this
 	RaceState* raceState;		//handles what stage of race is being conducted
 	//Team** teams;		/*COMBINE WITH OTHER CLASSES*/
 public:
-	
+	static int numRaces;	//keeps track of how many races have been created - only E and NE races update this
 	string raceName;		//Name of the track
-	double trackLength;		//Length of track - metres
+	double trackLength;		//Length of track - kilometres
 	int raceId;				//id of the race - is function of numRaces
 	int numTeams;			//number of teams participating in the race
 
+	Race();						//generator for catelogue
 	Race(string,double,int);	//initialises race
 	~Race();
 

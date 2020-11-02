@@ -1,6 +1,7 @@
 #ifndef NONEUROPEANRACE_H
 #define NONEUROPEANRACE_H
 #include "Race.h"
+#include <iostream>
 using namespace std;
 
 class NonEuropeanRace : public Race {

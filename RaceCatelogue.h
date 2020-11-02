@@ -2,6 +2,7 @@
 #define RACECATELOGUE_H
 #include "Race.h"
 #include "RaceIterator.h"
+#include <iostream>
 using namespace std;
 
 

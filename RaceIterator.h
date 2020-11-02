@@ -1,18 +1,21 @@
 #ifndef RACEITERATOR_H
 #define RACEITERATOR_H
 #include "Iterator.h"
-#include "Aggregate.h"
+#include <vector>
 using namespace std;
 
-class Race; //FORWARD DEC PREVENTS CIRCULAR REFERENCE
+class Race;
 
 class RaceIterator : public Iterator {
+private:
+	vector<Race*> array;
+	int index;
 public:
-	RaceIterator(Aggregate**, int);
-	Aggregate* first();
-	Aggregate* next();
+	RaceIterator(Race**, int);
+	Race* first();
+	Race* next();
 	bool isDone();
-	Aggregate* currentItem();
+	Race* currentItem();
 };
 
 #endif

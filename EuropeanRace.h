@@ -2,6 +2,7 @@
 #define EUROPEANRACE_H
 #include "Race.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 class EuropeanRace : public Race {

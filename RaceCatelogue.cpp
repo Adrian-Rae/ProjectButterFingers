@@ -1,10 +1,11 @@
 #include "RaceCatelogue.h"
 using namespace std;
 
-RaceCatelogue::RaceCatelogue(int n){
+RaceCatelogue::RaceCatelogue(int n):Race(){
+	cout<<"[New race roster created]"<<endl;
 	this->numRaces = 0;
 	this->maxRaces = n;
-	this->raceCatelogue = new RaceCatelogue*[n];
+	this->raceCatelogue = new Race*[n];
 }
 
 RaceCatelogue::~RaceCatelogue(){
@@ -12,11 +13,18 @@ RaceCatelogue::~RaceCatelogue(){
 }
 
 bool RaceCatelogue::addRace(Race* r){
-	return ((this->numRaces==this->maxRaces)?false:(this->raceCatelogue[this->numRaces++] = r));
+	bool success = (this->numRaces<this->maxRaces);
+	if(success){
+		cout<<"[Successfully added "<<r->raceName<<" to the roster as race: "<<this->numRaces+1<<"]"<<endl;
+		this->raceCatelogue[this->numRaces++] = r;
+		return success;
+	}
+	cout<<"[Failed to add "<<r->raceName<<" to the roster]"<<endl;
+	return false;
 }
 
 RaceIterator* RaceCatelogue::createIterator() {
-	return new RaceIterator(this->RaceCatelogue, this->numRaces); 
+	return new RaceIterator(this->raceCatelogue, this->numRaces); 
 }
 
 

@@ -1,5 +1,12 @@
 #include "Race.h"
+#include "RaceIterator.h"
 using namespace std;
+
+int Race::numRaces=0;
+
+Race::Race(){
+
+}
 
 Race::Race(string n, double d, int t){
 	//HANDLES RACE CREATION
