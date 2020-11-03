@@ -15,7 +15,9 @@ Wheel::~Wheel()
 ////////////////////////////////////////////////////////////////////////////
 Wheel* Wheel::clone()
 {
-	//do the clone here
+	Wheel* w = new Wheel();
+	w->setType(type);
+	return w;
 }
 
 void Wheel::setType(string type){

@@ -4,11 +4,12 @@
 #include "Engineer.h"
 #include "Wheel.h"
 #include "WheelManufacturer.h"
+#include "Staff.h"
 #include <vector>
 
 using namespace std;
 
-class Strategist{
+class Strategist: public Staff{
 	private:
 		int currentResults;
 	public:

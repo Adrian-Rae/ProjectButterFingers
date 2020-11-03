@@ -4,7 +4,6 @@
 #include "Engineer.h"
 #include "Strategist.h"
 #include "ConcreteEngineer.h"
-#include "ConcreteStrategist.h"
 
 class ConcreteStrategist: public Strategist{
 	private:

@@ -2,6 +2,7 @@
 #define ABSTRACTFACTORY_H
 #include <string>
 #include <iostream>
+#include "Transporter.h"
 
 class AbstractFactory {
  

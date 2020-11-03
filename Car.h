@@ -23,11 +23,11 @@ protected:
 
 public:
     Car();
-    virtual ~Car();
-    virtual int setMaxSpeed(int);
+    //virtual ~Car();
+    virtual void setMaxSpeed(int);
     virtual void setTeamName(string);
-    virtual void addWheels(); //Should return Wheels object @ToDo
-    virtual Car* getCar();
+   // virtual void addWheels(); //Should return Wheels object @ToDo
+    //virtual Car* getCar();
     string getTeamName();
     int getMaxSpeed();
     string getCurrentTyres(); //Not sure about the return type @ToDo
