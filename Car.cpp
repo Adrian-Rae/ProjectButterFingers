@@ -1,13 +1,8 @@
 #include "Car.h"
 
 Car::Car(){
-    teamName = "ButterFingers";
-    maxSpeed = 100;
-    tyresFitted = false;
-    tyreChangeNeeded = false;
-    needsImprovements = false;
-    //wheels = NULL;
-    aeroDynamics = 50;
+    teamName = "Not Set";
+    maxSpeed = 0;
 }
 
 void Car::setTeamName(string name){
@@ -26,8 +21,4 @@ int Car::getMaxSpeed(){
     return maxSpeed;
 }
 
-string Car::getCurrentTyres(){ //string or vector ??
-    return "";
-    //return wheels->;
-}
 

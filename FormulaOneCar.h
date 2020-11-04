@@ -11,10 +11,8 @@ private:
 
 public:
     FormulaOneCar();
-    //~FormulaOneCar();
-    Car* getCar();
+    ~FormulaOneCar() {};;
     void displayCarInfo();
-    string getCurrentTyres();
 };
 
 

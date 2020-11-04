@@ -2,15 +2,21 @@
 #define TEAM_H
 
 #include <string>
+#include <vector>
+#include <random>
 
 #include "Staff.h"
 #include "Car.h"
 #include "Transporter.h"
 #include "Test.h"
 #include "WheelManufacturer.h"
+#include "Wheel.h"
 #include "CarFactory.h"
 #include "ConcreteEngineer.h"
 #include "ConcreteStrategist.h"
+#include "WindTunnel.h"
+#include "European.h"
+#include "NonEuropean.h"
 
 using namespace std;
 
@@ -21,20 +27,36 @@ public:
 	~Team();
 
 	void prepSeason();
-	void prepRace();
+	void prepRace(bool euro, int conditions);
 	void race();
+	void setGarageEquipment(vector<string>);
+	void setCateringEquipment(vector<string>);
+	void setOtherEquipment(vector<string>);
+
+	string getDriver();
 
 private:
 	Staff** staff;
 	ConcreteEngineer* leadEng;
+	ConcreteStrategist* leadStrat;
 	Staff* driver;
+
 	Car* raceCar;
+
 	Transporter* equipment;
+
 	Test* testFacility;
+
 	WheelManufacturer* manufacturer;
+
 	int budget;
 	string name;
 	static int staffID;
+	Wheel** wheels;
+
+	vector<string> garageEquipment;
+	vector<string> cateringEquipment;
+	vector<string> otherEquipment;
 
 	void addEng(int);
 	void addStrat(int);

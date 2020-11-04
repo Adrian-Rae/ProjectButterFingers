@@ -8,6 +8,10 @@ Staff::Staff(string te, string n, string ty) {
 	type = ty;
 }
 
+void Staff::work() {
+	cout << "Working" << endl;
+}
+
 void Staff::identify() {
 	cout << "I am staffmember " << name << " from team " << team << ", I work as a(n) " << type << endl;
 }

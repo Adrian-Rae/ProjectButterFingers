@@ -14,6 +14,7 @@ class ConcreteStrategist: public Strategist{
 		~ConcreteStrategist();
 		void update();
 		void identify();
-		Wheel** getWheels();
+		void work();
+		Wheel** getWheels(int conditions);
 };
 #endif

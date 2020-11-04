@@ -5,8 +5,18 @@ Team::Team(WheelManufacturer* wm, int bud, string n){
 	budget = bud;
 	name = n;
 	staffID = 1;
+
+	vector<string> ge{"Tools","Spare Parts","Fuel"};
+	vector<string> ce{"Tables","Plates","Cutlery","Napkins"};
+	vector<string> oe{"Computers","Cameras"};
+
+	garageEquipment = ge;
+
+	cateringEquipment = ce;
+
+	otherEquipment = oe;
 	
-	driver = new Staff(name, to_string(staffID), "Driver");
+	driver = new Staff(name, to_string(staffID)+ name, "Driver");
 	staffID++;
 
 	CarFactory* fact = new CarFactory();
@@ -14,7 +24,8 @@ Team::Team(WheelManufacturer* wm, int bud, string n){
 	raceCar = fact->buildCar();
 
 	equipment = nullptr;
-	testFacility = new Test();
+	SimulatorTest* sim = new WindTunnel(raceCar);
+	testFacility = new Test(sim);
 
 	switch (budget) {
 	case 1:
@@ -40,8 +51,18 @@ Team::Team(WheelManufacturer* wm, int bud, string n){
 		addAssist(2);
 		break;
 	}
-
 	staff[0] = driver;
+
+	raceCar->setMaxSpeed(150 + rand()%100);
+	raceCar->setTeamName(name);
+
+	wheels = nullptr;
+
+	cout<< "Team " << name << " has been created!" <<endl;
+	cout << "We have a budget of " << budget * 25 + 75 << " million Euros!" << endl;
+	cout << "We currently have " << sizeof(staff) << " staff members." << endl;
+	cout << "Our car has a top speed of " << raceCar->getMaxSpeed() << " kilometers per hour!" << endl;
+	cout << "Our driver is " << getDriver() << endl;
 }
 
 Team::~Team(){
@@ -63,12 +84,52 @@ Team::~Team(){
 void Team::prepSeason() {
 
 }
-void Team::prepRace() {
 
+void Team::prepRace(bool euro, int conditions) {
+	cout << "Team "<< name << " is preparing for the race!" << endl;
+
+	cout << "Our staff will now run tests and prepare for the race: " << endl;
+	for (int x = 0; x < sizeof(staff); x++) {
+		staff[x]->work();
+	}
+
+	if (euro) {
+		cout << "We are preparing a truck to transport our equipment to an European race: " << endl;
+		European* logistics = new European();
+		equipment = logistics->CreateTransporter();
+	}
+	else {
+		cout << "We are preparing a shipping container to transport our equipment to an non-European race: " << endl;
+		NonEuropean* logistics = new NonEuropean();
+		equipment = logistics->CreateTransporter();
+	}
+
+	cout << "Now it is time to pack up our equipment and load it into the transporter: " << endl;
+	equipment->setGarageEquipment(garageEquipment);
+	equipment->setCateringEquipment(cateringEquipment);
+	equipment->setOtherEquipment(otherEquipment); 
+
+	cout << "Lastly we have to ensure we have the right tires for the track conditions and our car: " << endl;
+	wheels = leadStrat->getWheels(conditions);
 }
 void Team::race() {
 
 }
+
+void Team::setGarageEquipment(vector<string> ge) {
+	garageEquipment = ge;
+}
+void Team::setCateringEquipment(vector<string> ce) {
+	cateringEquipment = ce;
+}
+void Team::setOtherEquipment(vector<string> oe) {
+	otherEquipment = oe;
+}
+
+string Team::getDriver() {
+	return driver->getName();
+}
+
 void Team::addEng(int n) {
 	ConcreteEngineer* lead = new ConcreteEngineer(name, to_string(staffID));
 	staffID++;
@@ -80,6 +141,9 @@ void Team::addEng(int n) {
 	}
 }
 void Team::addStrat(int n) {
+	ConcreteStrategist* lead = new ConcreteStrategist(leadEng, manufacturer);
+	staffID++;
+	leadStrat = lead;
 	for (int x = 0; x < n; x++) {
 		ConcreteStrategist* cs = new ConcreteStrategist(leadEng, manufacturer);
 		staff[staffID - 1] = cs;

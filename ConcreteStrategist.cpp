@@ -17,7 +17,6 @@ ConcreteStrategist::~ConcreteStrategist(){
 }
 
 void ConcreteStrategist::update(){
-	//call the subject getStata();
 	setResults(subject->getState());
 }
 
@@ -25,11 +24,16 @@ void ConcreteStrategist::identify(){
 	cout<<"Strategist"<<endl;
 }
 
-Wheel** ConcreteStrategist::getWheels(){
+void ConcreteStrategist::work() {
+	cout << "strategising" << endl;
+	update();
+}
+
+Wheel** ConcreteStrategist::getWheels(int conditions){
 	Wheel** wheels = NULL;
-	for(int i = 0; i<raceList.size(); i++){
-		setResults(getResults() + raceList[i]);
-	}
+
+	setResults(getResults() + conditions);
+
 	if(getResults() > 0){
 		wheels = wheelMaker->getWheelSet(1);
 	}
