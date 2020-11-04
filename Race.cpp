@@ -32,7 +32,7 @@ void Race::request(){
 	this->raceState->handle();
 }
 
-void Race::startRace(){
+int* Race::startRace(){
 	//HANDLES THE WHOLE RACE SIMULATION
 }
 

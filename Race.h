@@ -1,5 +1,6 @@
 #ifndef RACE_H
 #define RACE_H
+
 #include "RaceState.h"
 #include "Aggregate.h"
 #include "RaceIterator.h"
@@ -27,7 +28,7 @@ public:
 
 	bool addTeam(Team*);	/*COMBINE WITH OTHER CLASSES*/
 	void request();			//handles state changes, will rely upon decorator
-	void startRace();
+	virtual int* startRace();
 
 
 	virtual RaceIterator* createIterator();

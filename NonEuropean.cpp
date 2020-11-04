@@ -13,9 +13,3 @@ Transporter* NonEuropean::CreateTransporter()
 	Transporter* container = new ShippingContainer();
 	return container;
 }
-
-/*Transporter* NonEuropean::CreateTransporter()
-{
-	return new ShippingContainer();
-} 
-*/ 

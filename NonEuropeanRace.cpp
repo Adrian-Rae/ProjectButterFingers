@@ -7,3 +7,22 @@ NonEuropeanRace::NonEuropeanRace(string n,double d, int t):Race(n,d,t){
 }
 
 NonEuropeanRace::~NonEuropeanRace(){numRaces--;}
+
+int* NonEuropeanRace::startRace() {
+	int * results = new int[numTeams];
+	for (int x = 0; x < numTeams; x++) {
+		int conditions = rand() % 2;
+		if (conditions == 2)
+			conditions = -1;
+		teams[x]->prepRace(false, conditions);
+	}
+	for (int x = 0; x < numTeams; x++) {
+		results[x] = teams[x]->race(trackLength);
+	}
+	cout << "The results of the race are: " << endl;
+	for (int x = 0; x < numTeams; x++) {
+		teams[x]->display();
+	}
+
+	return results;
+}

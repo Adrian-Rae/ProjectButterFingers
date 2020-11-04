@@ -9,6 +9,7 @@ class NonEuropeanRace : public Race {
 public:
 	NonEuropeanRace(string,double,int);
 	~NonEuropeanRace();
+	int* startRace();
 };
 
 #endif

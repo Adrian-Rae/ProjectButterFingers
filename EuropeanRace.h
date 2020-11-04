@@ -10,7 +10,7 @@ class EuropeanRace : public Race {
 public:
 	EuropeanRace(string,double,int);
 	~EuropeanRace();
-
+	int* startRace();
 };
 
 #endif

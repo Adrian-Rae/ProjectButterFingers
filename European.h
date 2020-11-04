@@ -14,12 +14,9 @@ class European : public AbstractFactory {
  public:
 	  
 	  European();
-	  //TruckContainer* CreateTransporter();
 	  Transporter* CreateTransporter();  
 
 
 };
 
 #endif
-
-//implements exactly what needs to be done for european races 
