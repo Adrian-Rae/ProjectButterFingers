@@ -1,11 +1,11 @@
 #include "Race.h"
-#include "RaceIterator.h"
+
 using namespace std;
 
 int Race::numRaces=0;
 
 Race::Race(){
-
+	
 }
 
 Race::Race(string n, double d, int t){
@@ -15,6 +15,7 @@ Race::Race(string n, double d, int t){
 	this->numTeams = t;
 	this->teams = new Team*[t];
 	this->teamCount = 0;
+	//raceState = new Friday();
 }
 
 Race::~Race(){

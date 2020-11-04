@@ -13,7 +13,12 @@ int main()
     cin >> teams;
     RaceBuilder* builder = new RaceBuilder();
     builder->build(num, teams);
-    Race* races = builder->getResult();
-    races->request();
+    RaceCatelogue* races = builder->getResult();
+    RaceIterator* iterator = races->createIterator();
+    Race* current = iterator->first();
+    for (int x = 0; x < num; x++) {
+        current->request();
+        iterator->next();
+    }
 }
 
