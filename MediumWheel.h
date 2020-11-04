@@ -1,4 +1,4 @@
-#ifndef MediumWheel_H
+#if !defined(MediumWheel_H)
 #define MediumWheel_H
 
 #include "Wheel.h"

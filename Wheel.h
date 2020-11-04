@@ -1,5 +1,6 @@
-#ifndef WHEEL_H
+#if !defined(WHEEL_H)
 #define WHEEL_H
+
 
 #include <string>
 #include <iostream>
@@ -14,7 +15,7 @@ class Wheel
 	public:
 		Wheel();
 		~Wheel();
-   		virtual Wheel* clone();
+   		virtual Wheel* clone() = 0;
 		void setType(string type);
 		string getType();
 

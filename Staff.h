@@ -1,22 +1,32 @@
-#ifndef STAFF_H
+#if !defined(STAFF_H)
 #define STAFF_H
+
 
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class Staff{
-public:
-	Staff(){};
-	Staff(string, string, string);
-	string getName() {return name;};
-	virtual void identify();
-	virtual void work();
-private:
-	string name;
-	string type;
-	string team;
-};
-#endif
+class Staff
+{
+	private:
+		string name;
+		string type;
+		string team;
 
+
+	public:
+		Staff();
+		Staff(string vteam, string vname, string vtype);
+		virtual void Identify();
+		string getName();
+		void setName(string v);
+		string getType();
+		void setType(string v);
+		string getTeam();
+		void setTeam(string v);
+		
+
+};
+
+#endif // Staff_H

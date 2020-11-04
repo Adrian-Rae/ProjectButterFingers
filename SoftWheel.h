@@ -1,4 +1,4 @@
-#ifndef SoftWheel_H
+#if !defined(SoftWheel_H)
 #define SoftWheel_H
 
 #include "Wheel.h"

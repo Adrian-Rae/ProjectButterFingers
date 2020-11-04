@@ -1,6 +1,5 @@
 #ifndef WHEELMANUFACTURER_H
 #define WHEELMANUFACTURER_H
-
 #include <iostream>
 #include "Wheel.h"
 #include "SoftWheel.h"

@@ -2,19 +2,17 @@
 #define CONCRETESTRATEGIST_H
 #include <iostream>
 #include "Engineer.h"
-#include "Strategist.h"
-#include "ConcreteEngineer.h"
 
 class ConcreteStrategist: public Strategist{
 	private:
 		ConcreteEngineer* subject;
 		WheelManufacturer* wheelMaker;
+		int index;
 	public:
-		ConcreteStrategist(ConcreteEngineer* eng, WheelManufacturer* wheels);
+		ConcreteStrategist(ConcreteEngineer* eng, WheelManufacturer* wheels, int index);
 		~ConcreteStrategist();
 		void update();
-		void identify();
-		void work();
-		Wheel** getWheels(int conditions);
+		Wheel** getWheels();
+		WheelManufacturer* getWheelManufacturer();
 };
 #endif

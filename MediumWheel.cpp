@@ -1,18 +1,18 @@
-#include "SoftWheel.h"
+#include "MediumWheel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-SoftWheel::SoftWheel(string type)
+MediumWheel::MediumWheel(string type)
 {//DONE
 	setType(type);
 }
-SoftWheel::~SoftWheel()
+MediumWheel::~MediumWheel()
 {//DONE
 	
 }
 ////////////////////////////////////////////////////////////////////////////
-SoftWheel* SoftWheel::clone()
+MediumWheel* MediumWheel::clone()
 {//DONE	
-	SoftWheel* soft = new SoftWheel(getType());
-	return soft;
+	MediumWheel *medium = new MediumWheel(getType());
+	return medium;
 }
 ////////////////////////////////////////////////////////////////////////////
