@@ -149,11 +149,11 @@ void Team::addEng(int n) {
 	}
 }
 void Team::addStrat(int n) {
-	ConcreteStrategist* lead = new ConcreteStrategist(leadEng, manufacturer);
+	ConcreteStrategist* lead = new ConcreteStrategist(leadEng, manufacturer, 0);
 	staffID++;
 	leadStrat = lead;
-	for (int x = 0; x < n; x++) {
-		ConcreteStrategist* cs = new ConcreteStrategist(leadEng, manufacturer);
+	for (int x = 1; x < n; x++) {
+		ConcreteStrategist* cs = new ConcreteStrategist(leadEng, manufacturer, x);
 		staff[staffID - 1] = cs;
 		staffID++;
 	}

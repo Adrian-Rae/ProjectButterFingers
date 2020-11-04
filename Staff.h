@@ -25,7 +25,7 @@ class Staff
 		void setType(string v);
 		string getTeam();
 		void setTeam(string v);
-		
+		virtual void work() { cout << name << " in team " << team << " is working as an" << type << endl; };
 
 };
 

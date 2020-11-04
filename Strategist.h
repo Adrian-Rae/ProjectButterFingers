@@ -4,7 +4,6 @@
 #include "Engineer.h"
 #include "Wheel.h"
 #include "WheelManufacturer.h"
-#include <bits/stdc++.h>
 
 class Strategist: public Staff{
 	private:

@@ -37,7 +37,7 @@ void Staff::setTeam(string v)
 	team=v;
 }
 
-/*void Staff::Identify(){
+void Staff::Identify(){
 	cout<<"I am staffmember "<<name<<" from team "<<team<<". I work as "<<type<<endl;
-}*/
+}
 ////////////////////////////////////////////////////////////////////////////

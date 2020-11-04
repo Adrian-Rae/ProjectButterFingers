@@ -16,21 +16,26 @@ ConcreteStrategist::~ConcreteStrategist(){
 }
 
 void ConcreteStrategist::update(){
-	currentResults = subject->getState();
+	setCurrentResults(subject->getState());
 }
 
-Wheel** ConcreteStrategist::getWheels(){
+void ConcreteStrategist::work() {
+	cout << "strategising" << endl;
+	update();
+}
+
+Wheel** ConcreteStrategist::getWheels(int conditions){
 	Wheel** wheels = NULL;
-	for(int i = 0; i<raceList.size(); i++){
-		setCurrentResults( getCurrentResults()+ raceList[i]);
-	}
-	if(currenResults > 0){
+
+	setCurrentResults(getCurrentResults() + conditions);
+
+	if (getCurrentResults() > 0) {
 		wheels = wheelMaker->getWheelSet(1);
 	}
-	else if(currenResults < 0){
+	else if(getCurrentResults() < 0){
 		wheels = wheelMaker->getWheelSet(-1);
 	}
-	else if(currenResults == 0){
+	else if(getCurrentResults() == 0){
 		wheels = wheelMaker->getWheelSet(0);
 	}
 	

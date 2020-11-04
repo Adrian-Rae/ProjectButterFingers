@@ -7,6 +7,8 @@
 #include "RaceDecorator.h"
 #include <string>
 #include "Team.h" /*COMBINE WITH OTHER CLASSES*/
+#include "RaceIterator.h"
+#include "Friday.h"
 using namespace std;
 
 class Race : public Aggregate {

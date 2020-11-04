@@ -34,6 +34,7 @@ void Race::request(){
 
 int* Race::startRace(){
 	//HANDLES THE WHOLE RACE SIMULATION
+	return nullptr;
 }
 
 RaceIterator* Race::createIterator(){
