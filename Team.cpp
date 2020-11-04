@@ -1,10 +1,12 @@
 #include "Team.h"
 
+int Team::staffID = 1;
+
 Team::Team(WheelManufacturer* wm, int bud, string n){
 	manufacturer = wm;
 	budget = bud;
 	name = n;
-	staffID = 1;
+	currentTime = 0;
 
 	vector<string> ge{"Tools","Spare Parts","Fuel"};
 	vector<string> ce{"Tables","Plates","Cutlery","Napkins"};
@@ -112,8 +114,18 @@ void Team::prepRace(bool euro, int conditions) {
 	cout << "Lastly we have to ensure we have the right tires for the track conditions and our car: " << endl;
 	wheels = leadStrat->getWheels(conditions);
 }
-void Team::race() {
+int Team::race(int dist) {
+	double results = dist / (raceCar->getMaxSpeed() / 3600) ;
+	results += rand() % 10;
+	currentTime = (int)results;
+	return currentTime;
+}
+void Team::display() {
+	int min, sec;
+	min = currentTime / 60;
+	sec = currentTime % 60;
 
+	cout << "Team " << name << " - " << getDriver() << " - " << min << ":" << sec << endl;
 }
 
 void Team::setGarageEquipment(vector<string> ge) {
@@ -124,10 +136,6 @@ void Team::setCateringEquipment(vector<string> ce) {
 }
 void Team::setOtherEquipment(vector<string> oe) {
 	otherEquipment = oe;
-}
-
-string Team::getDriver() {
-	return driver->getName();
 }
 
 void Team::addEng(int n) {

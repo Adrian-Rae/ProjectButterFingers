@@ -8,6 +8,6 @@ class WindTunnel: public SimulatorTest{
 	public:
 		WindTunnel(Car* car);
 		void TestF1Car();
-		int getToken(int num);
+		int getToken();
 };
 #endif

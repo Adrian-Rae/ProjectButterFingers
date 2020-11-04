@@ -13,19 +13,19 @@ Race::Race(string n, double d, int t){
 	this->raceName = n;
 	this->trackLength = d;
 	this->numTeams = t;
-	//this->teams = new Team*[t];
+	this->teams = new Team*[t];
 	this->teamCount = 0;
 }
 
 Race::~Race(){
-	//delete [] this->teams;
+	delete [] this->teams;
 }
 
-/*	TODO migrate with other classes
 bool Race::addTeam(Team* t){
 	this->teams[teamCount++] = t;
+	return true;
 }
-*/
+
 
 void Race::request(){
 	//HANDLES CHANGING OF DAYS

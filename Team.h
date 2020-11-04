@@ -28,12 +28,14 @@ public:
 
 	void prepSeason();
 	void prepRace(bool euro, int conditions);
-	void race();
+	int race(int dist);
+	void display();
 	void setGarageEquipment(vector<string>);
 	void setCateringEquipment(vector<string>);
 	void setOtherEquipment(vector<string>);
 
-	string getDriver();
+	string getDriver() { return driver->getName(); };
+	int getTime() { return currentTime; };
 
 private:
 	Staff** staff;
@@ -53,6 +55,7 @@ private:
 	string name;
 	static int staffID;
 	Wheel** wheels;
+	int currentTime;
 
 	vector<string> garageEquipment;
 	vector<string> cateringEquipment;
