@@ -11,7 +11,6 @@ class CarFactory : public Factory{
 public:
     CarFactory();
     virtual Car *buildCar();
-    virtual void fitWheels();
     void bulidChasis(); 
     void attachParts();
 };

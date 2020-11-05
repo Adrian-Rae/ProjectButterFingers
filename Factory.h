@@ -12,10 +12,7 @@ protected:
 public:
     Factory();
     ~Factory();
-    //void bulidChasis(); //virtual??
-    //void attachParts(); //virtual??
-    //virtual void fitWheels(); //virtual??
     virtual Car* buildCar()=0;
 };
 
-#endif // FACTORY_H
+#endif

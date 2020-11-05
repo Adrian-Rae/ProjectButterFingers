@@ -2,13 +2,20 @@
 #define TEST_H
 #include <iostream>
 #include "SimulatorTest.h"
-using namespace std;
+#include "WindTunnel.h"
+#include "ComputerSoftware.h"
+#include "Car.h"
 
 class Test{
 	private:
-		SimulatorTest* simulator;
+		Car* raceCar;
+		int tokens;
+		int races;
+		bool newRace;
+		static int num;
 	public:
-		Test(SimulatorTest* test);
-		void runTest();
+		Test(Car* car, int n, int to = 500);
+		int runTest();
+		void resetRace() { newRace = true; num++; };
 };
 #endif

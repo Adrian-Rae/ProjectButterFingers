@@ -2,16 +2,26 @@
 
 WindTunnel::WindTunnel(Car* car):SimulatorTest(car){}
 
-void WindTunnel::TestF1Car(){
-	if(token > 0){
-		token--;
-		cout<<"Testing the F1 car in the wind Tunnel"<<endl;
-	}
-	else{
-		cout<<"The tokens are all used up!"<<endl;
-	}
-}
+int WindTunnel::test(){
+	cout<<"We are testing the vehicle in the wind tunnel"<<endl;
 
-int WindTunnel::getToken(){
-	return token;
+	int temp = 0;
+	int speed = getVehicle()->getMaxSpeed();
+
+	if (speed <= 200) {
+		int num = rand() % 3;
+		if (num == 2 || num == 3)
+			temp = -1;
+		else if(num == 1)
+			temp = 1;
+	}
+	if (speed > 200) {
+		int num = rand() % 3;
+		if (num == 1 || num == 2)
+			temp = 1;
+		else if(num == 3)
+			temp = -1;
+	}
+
+	return temp;
 }

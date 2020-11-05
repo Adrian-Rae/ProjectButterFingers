@@ -1,22 +1,31 @@
 #ifndef CONCRETESTRATEGIST_H
 #define CONCRETESTRATEGIST_H
+
 #include <iostream>
-#include "Engineer.h"
+
 #include "Strategist.h"
 #include "ConcreteEngineer.h"
+#include "WheelManufacturer.h"
 
-class ConcreteStrategist: public Strategist{
-	private:
-		ConcreteEngineer* subject;
-		WheelManufacturer* wheelMaker;
-		int index;
+class ConcreteEngineer;
 
-	public:
-		ConcreteStrategist(ConcreteEngineer* eng, WheelManufacturer* wheels, int index);
-		~ConcreteStrategist();
-		void update();
-		void work();
-		Wheel** getWheels(int conditions);
-		WheelManufacturer* getWheelManufacturer();
+class ConcreteStrategist : public Strategist {
+public:
+	ConcreteStrategist(std::string n, std::string t, ConcreteEngineer* eng, WheelManufacturer* man, int index);
+	~ConcreteStrategist();
+
+	void update();
+	void identify();
+	void work();
+	Wheel** getWheels(int conditions);
+	WheelManufacturer* getManufacturer() { return wheelMaker; };
+
+private:
+	ConcreteEngineer* subject;
+	WheelManufacturer* wheelMaker;
+	int index;
 };
+
+
 #endif
+

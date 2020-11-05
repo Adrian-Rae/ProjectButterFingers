@@ -2,11 +2,12 @@
 
 int Team::staffID = 1;
 
-Team::Team(WheelManufacturer* wm, int bud, string n){
+Team::Team(WheelManufacturer* wm, int bud, string n, int races){
 	manufacturer = wm;
 	budget = bud;
 	name = n;
 	currentTime = 0;
+	numRaces = races;
 
 	vector<string> ge{"Tools","Spare Parts","Fuel"};
 	vector<string> ce{"Tables","Plates","Cutlery","Napkins"};
@@ -26,8 +27,8 @@ Team::Team(WheelManufacturer* wm, int bud, string n){
 	raceCar = fact->buildCar();
 
 	equipment = nullptr;
-	SimulatorTest* sim = new WindTunnel(raceCar);
-	testFacility = new Test(sim);
+
+	testFacility = new Test(raceCar, numRaces);
 
 	switch (budget) {
 	case 1:
@@ -139,21 +140,21 @@ void Team::setOtherEquipment(vector<string> oe) {
 }
 
 void Team::addEng(int n) {
-	ConcreteEngineer* lead = new ConcreteEngineer(name, to_string(staffID));
+	ConcreteEngineer* lead = new ConcreteEngineer(to_string(staffID), name, testFacility);
 	staffID++;
 	leadEng = lead;
 	for (int x = 1; x < n; x++) {
-		ConcreteEngineer* e = new ConcreteEngineer(name, to_string(staffID));
+		ConcreteEngineer* e = new ConcreteEngineer(to_string(staffID), name, testFacility);
 		staff[staffID - 1] = e;
 		staffID++;
 	}
 }
 void Team::addStrat(int n) {
-	ConcreteStrategist* lead = new ConcreteStrategist(leadEng, manufacturer, 0);
+	ConcreteStrategist* lead = new ConcreteStrategist(to_string(staffID), name, leadEng, manufacturer, 0);
 	staffID++;
 	leadStrat = lead;
 	for (int x = 1; x < n; x++) {
-		ConcreteStrategist* cs = new ConcreteStrategist(leadEng, manufacturer, x);
+		ConcreteStrategist* cs = new ConcreteStrategist(to_string(staffID), name, leadEng, manufacturer, x);
 		staff[staffID - 1] = cs;
 		staffID++;
 	}

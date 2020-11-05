@@ -5,6 +5,6 @@
 class ComputerSoftware: public SimulatorTest{
 	public:
 		ComputerSoftware(Car* car);
-		void TestF1Car();
+		int test();
 };
 #endif

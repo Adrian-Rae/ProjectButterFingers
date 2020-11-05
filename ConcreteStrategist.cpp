@@ -1,30 +1,24 @@
 #include "ConcreteStrategist.h"
 
-ConcreteStrategist::ConcreteStrategist(ConcreteEngineer* eng, WheelManufacturer* wheels, int index){
-	this->subject = eng;
-	this->wheelMaker = wheels;
-	this->index = index;
-	//what would team and type here be?
+ConcreteStrategist::ConcreteStrategist(std::string n, std::string t, ConcreteEngineer* eng, WheelManufacturer* man, int in) : Strategist(n, t){
+	subject = eng;
+	wheelMaker = man;
+	index = in;
 }
-
-ConcreteStrategist::~ConcreteStrategist(){
-	//check if engineer should be deleted here
-	if(wheelMaker != NULL){
-		delete wheelMaker;
-		wheelMaker = NULL;
-	}
+ConcreteStrategist::~ConcreteStrategist() {
+	wheelMaker = nullptr;
+	subject = nullptr;
 }
-
-void ConcreteStrategist::update(){
-	setCurrentResults(subject->getState());
+void ConcreteStrategist::update() {
+	setCurrentResults(subject->getStatus());
 }
-
+void ConcreteStrategist::identify() {
+	Strategist::identify();
+}
 void ConcreteStrategist::work() {
-	cout << "strategising" << endl;
-	update();
+	Strategist::work();
 }
-
-Wheel** ConcreteStrategist::getWheels(int conditions){
+Wheel** ConcreteStrategist::getWheels(int conditions) {
 	Wheel** wheels = NULL;
 
 	setCurrentResults(getCurrentResults() + conditions);
@@ -32,16 +26,12 @@ Wheel** ConcreteStrategist::getWheels(int conditions){
 	if (getCurrentResults() > 0) {
 		wheels = wheelMaker->getWheelSet(1);
 	}
-	else if(getCurrentResults() < 0){
+	else if (getCurrentResults() < 0) {
 		wheels = wheelMaker->getWheelSet(-1);
 	}
-	else if(getCurrentResults() == 0){
+	else if (getCurrentResults() == 0) {
 		wheels = wheelMaker->getWheelSet(0);
 	}
-	
-	return wheels;
-}
 
-WheelManufacturer* ConcreteStrategist::getWheelManufacturer(){
-	return this->wheelMaker;
+	return wheels;
 }

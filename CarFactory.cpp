@@ -10,13 +10,7 @@ Car* CarFactory::buildCar(){
     cout<<"Building the car, with fitted parts, engine and other aero stuff"<<endl;
     bulidChasis();
     attachParts();
-    fitWheels();
     return this->car;
-}
-
-void CarFactory::fitWheels(){
-    //How do I access the correct wheel set required i.e getWeels()?
-    //Fitting of wheels could be delegated to some other class, that makes the decision. i.e Strategist
 }
 
 void CarFactory::bulidChasis(){

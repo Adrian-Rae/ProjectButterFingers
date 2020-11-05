@@ -23,7 +23,7 @@ using namespace std;
 class Team
 {
 public:
-	Team(WheelManufacturer*, int, string);
+	Team(WheelManufacturer* wm, int bud, string n, int races);
 	~Team();
 
 	void prepSeason();
@@ -56,6 +56,7 @@ private:
 	static int staffID;
 	Wheel** wheels;
 	int currentTime;
+	int numRaces;
 
 	vector<string> garageEquipment;
 	vector<string> cateringEquipment;

@@ -1,20 +1,24 @@
 #ifndef STRATEGIST_H
 #define STRATEGIST_H
-#include <iostream>
-#include "Engineer.h"
-#include "Wheel.h"
-#include "WheelManufacturer.h"
 
-class Strategist: public Staff{
-	private:
-		int currentResults;
-	public:
-		int raceList;
-		//the functions:
-		Strategist();
-		virtual void update() = 0;
-		virtual void identify();
-		int getCurrentResults();
-		void setCurrentResults(int result);
+#include <iostream>
+#include <string>
+
+#include "Staff.h"
+
+class Strategist : public Staff {
+public:
+	Strategist(std::string n, std::string t);
+	virtual void update();
+	virtual void identify();
+	virtual void work();
+	int getCurrentResults() { return currentResults; };
+	void setCurrentResults(int res) { currentResults = res; };
+
+private:
+	int currentResults;
+
 };
+
 #endif
+

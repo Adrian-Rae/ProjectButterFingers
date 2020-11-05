@@ -1,27 +1,24 @@
 #include "ConcreteEngineer.h"
 
-ConcreteEngineer::ConcreteEngineer(Test* tester):Engineer(tester){
-	//nothing for now
-	setName("Engineer");//make sure these are correct
-	setTeam("Engineer team");
-	setType("Testing Engineer");
-}
-
-void ConcreteEngineer::notify(){
-	for(int i = 0; i< getObservers().size(); i++){
-		getObservers()[i]->update();
+void ConcreteEngineer::notify() {
+	for (Strategist* itr : getObservers()) {
+		itr->update();
 	}
 }
 
-int ConcreteEngineer::attach(ConcreteStrategist* strat){
+int ConcreteEngineer::attach(Strategist* strat) {
 	getObservers().push_back(strat);
+	return getObservers().size() - 1;
 }
-
-void ConcreteEngineer::detach(int index){
+void ConcreteEngineer::detach(int index) {
 	getObservers().erase(getObservers().begin() + index);
 }
 
-void ConcreteEngineer::identify()
-{
-	Staff::Identify();
+void ConcreteEngineer::work() {
+	Engineer::work();
+}
+void ConcreteEngineer::identify() {
+	Engineer::identify();
+	if (!hasSuccessor())
+		cout << "I am the lead engineer" << endl;
 }

@@ -10,7 +10,7 @@ class SimulatorTest{
 		Car *testVehicle;
 	public:
 		SimulatorTest(Car* testCar);
-		void test();
-		virtual void TestF1Car() = 0;//name them something else
+		virtual int test() { return 0; };
+		Car* getVehicle() { return testVehicle; };
 };
 #endif

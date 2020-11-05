@@ -1,55 +1,44 @@
 #include "Engineer.h"
-
-////////////////////////////////////////////////////////////////////////////
-Engineer::Engineer(Test* tester)
-{//DONE
-	testing = tester;
-	results = 0;//nothing for now...-1: soft 0: medium and 1: hard
-	successor = NULL;
-	setName("Engineer");//make sure these are correct
-	setTeam("Engineer team");
-	setType("Testing Engineer");
+Engineer::Engineer(std::string n, std::string t, Test* tester) : Staff(n, t, "Engineer") {
+	test = tester;
+	results = 0;
+	successor = nullptr;
 }
-Engineer::~Engineer()
-{//DONE
-	if(testing != NULL){
-		delete testing;
-		testing = NULL;
+Engineer::~Engineer() {
+	if (test != NULL) {
+		delete test;
+		test = NULL;
 	}
-	if(successor != NULL){
+	if (successor != NULL) {
 		delete successor;
 		successor = NULL;
 	}
-	//delete the strategist stuff too
-}
-////////////////////////////////////////////////////////////////////////////
-int Engineer::getState()
-{
-	return results;
 }
 
-void Engineer::setState(int state)
-{
-	this->results = state;
+void Engineer::identify() {
+	Staff::identify();
+	std::cout << "We are reporting to " << observers.size() << " strategists" << std::endl;
 }
 
-void Engineer::handelRequest(int state)
-{
-	if(successor == NULL){
-		setState(state);
-		this->testing->notify();
+void Engineer::work() {
+	Staff::work();//TODO: get results back
+	results = test->runTest();
+	std::cout << " on assessing the vehicle's preformance" << std::endl;
+	std::cout << "Our vehicle seem to be favouring ";
+	if (results > 0)
+		std::cout << "speed" << std::endl;
+	else if (results < 0)
+		std::cout << "handling" << std::endl;
+	else
+		std::cout << "a balanced approach" << std::endl;
+}
+
+void Engineer::handleRequest(int stat) {
+	if (successor == NULL) {
+		setStatus(stat);
+		successor->notify();
 	}
-	else{
-		this->successor->handleRequest(state);
+	else {
+		successor->handleRequest(stat);
 	}
 }
-
-void Engineer::identify()
-{
-	cout<<"I am staffmember "<<getName()<<" in team "<<getTeam()<<"and I work as an "<<getType()<<endl;
-}
-
-void Engineer::setSuccessor(Engineer *boss){
-	this->successor = boss;
-}
-////////////////////////////////////////////////////////////////////////////

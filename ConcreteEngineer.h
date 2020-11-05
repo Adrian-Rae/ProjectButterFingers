@@ -1,15 +1,26 @@
 #ifndef CONCRETEENGINEER_H
-#define CONCRETENGINEER_H
-#include "Engineer.h"
-#include "ConcreteStrategist.h"
+#define CONCRETEENGINEER_H
 
-class ConcreteEngineer: public Engineer{
-	public:
-		ConcreteEngineer(Test* tester);
-		void notify();
-		int attach(ConcreteStrategist* strat);
-		void detach(int index);
-		virtual void work() =0;
-		virtual void identify();
+#include <string>
+
+#include "Engineer.h"
+
+class ConcreteStrategist;
+
+class ConcreteEngineer : public Engineer {
+public:
+	ConcreteEngineer(std::string n, std::string t, Test* tester) : Engineer(n, t, tester) {};
+
+	void notify();
+
+	int attach(Strategist* strat);
+	void detach(int index);
+
+	void work();
+	void identify();
+
+	void newRace() { getTest()->resetRace(); };
 };
-#endif
+
+#endif 
+

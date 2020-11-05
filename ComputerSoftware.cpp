@@ -2,7 +2,18 @@
 
 ComputerSoftware::ComputerSoftware(Car* car):SimulatorTest(car){}
 
-void ComputerSoftware::TestF1Car(){
-	cout<<"Test the F1 car via computer software!"<<endl;
+int ComputerSoftware::test(){
+	cout<<"We are testing the vehicle via computer software"<<endl;
+
+	int temp = 0;
+	int speed = getVehicle()->getMaxSpeed();
+
+	int num = rand() % 2;
+	if (num == 2)
+		temp = -1;
+	else if (num == 1)
+		temp = 1;
+	
+	return temp;
 }
 

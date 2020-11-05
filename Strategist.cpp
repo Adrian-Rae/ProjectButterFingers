@@ -1,20 +1,22 @@
 #include "Strategist.h"
 
-Strategist::Strategist(){
+Strategist::Strategist(std::string n, std::string t) : Staff(n, t, "Strategist") {
 	currentResults = 0;
-	setName("Strategis");
-	setTeam("Strategy Team");
-	setType("Strategic analysis");
 }
+void Strategist::update() {
 
-void Strategist::identify(){
-	cout<<"I am staffmember "<<getName()<<", from team "<<getTeam()<<" and I work as "<<getType()<<endl;
 }
-
-void Strategist::setCurrentResults(int result){
-	currentResults = result;
+void Strategist::identify() {
+	Staff::identify();
+	std::cout << "My current strategy is ";
+	if(currentResults > 0)
+		std::cout << "to use hard tires" << std::endl;
+	else if(currentResults < 0)
+		std::cout << "to use soft tires" << std::endl;
+	else
+		std::cout << "to use medium tires" << std::endl;
 }
-
-int Strategist::getCurrentResults(){
-	return currentResults;
+void Strategist::work() {
+	Staff::work();
+	std::cout << " on crafting the perfect strategy" << std::endl;
 }
