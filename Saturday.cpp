@@ -2,6 +2,10 @@
 
 using namespace std;
 
+void Saturday::Saturday() {
+	Name="Saturday";
+}
+
 void Saturday::handle() {
 	cout<<"Its Saturday! "<<endl;
 }
