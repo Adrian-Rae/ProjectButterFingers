@@ -9,7 +9,7 @@ class Saturday : public RaceState {
 
 
 public:
-	Saturday(){};
+	Saturday();
 	~Saturday(){};
 	void handle();
 	RaceState* nextState();

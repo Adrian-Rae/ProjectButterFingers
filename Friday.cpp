@@ -3,7 +3,7 @@
 using namespace std;
 Friday::Friday()
 {
-	Name="Friday";
+	setState("Friday");
 }
 
 void Friday::handle() {

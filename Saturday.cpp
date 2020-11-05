@@ -2,8 +2,8 @@
 
 using namespace std;
 
-void Saturday::Saturday() {
-	Name="Saturday";
+Saturday::Saturday() {
+	setState("Saturday");
 }
 
 void Saturday::handle() {

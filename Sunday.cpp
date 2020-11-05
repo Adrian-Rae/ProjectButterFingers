@@ -4,7 +4,7 @@
 using namespace std;
 Sunday::Sunday()
 {
-	Name="Sunday";
+	setState("Sunday");
 }
 void Sunday::handle() {
 	cout<<"Its Sunday! "<<endl;

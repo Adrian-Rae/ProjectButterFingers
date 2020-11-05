@@ -1,18 +1,20 @@
 #ifndef RACESTATE_H
 #define RACESTATE_H
 
+#include <string>
+
 class RaceState {
 
 private: 
-	String Name;
+	std::string name;
 public:
 	RaceState(){};
 	~RaceState(){};
 	virtual void handle()=0;
 	virtual RaceState* nextState()=0;
 	virtual bool end() = 0;
-	String getState();
-	void setState(string);
+	std::string getState() { return name; };
+	void setState(std::string n) { name = n; };
 	
 };
 

@@ -7,7 +7,7 @@ class Sunday : public RaceState {
 
 
 public:
-	Sunday() {};
+	Sunday();
 	~Sunday() {};
 	void handle();
 	RaceState* nextState();
