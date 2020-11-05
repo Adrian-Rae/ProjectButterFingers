@@ -8,7 +8,7 @@ RaceDay::RaceDay(RaceState* s){
 
 void RaceDay::handle() {
 	RaceDecorator::handle();
-	this->addFunctionlity();
+	addFunctionlity();
 }
 
 void RaceDay::addFunctionlity() {

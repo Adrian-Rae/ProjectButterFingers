@@ -8,5 +8,8 @@ void Friday::handle() {
 
 RaceState* Friday::nextState() {
 	RaceState* state = new Saturday();
-	return state;
+	MorningPractise* practise = new MorningPractise(state);
+	AfternoonQualifying* qualifying = new AfternoonQualifying(practise);
+	
+	return qualifying;
 }

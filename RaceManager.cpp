@@ -17,7 +17,7 @@ int main()
     RaceIterator* iterator = races->createIterator();
     Race* current = iterator->first();
     for (int x = 0; x < num; x++) {
-        current->request();
+        iterator->currentItem()->request();
         iterator->next();
     }
 }

@@ -7,8 +7,11 @@ class Sunday : public RaceState {
 
 
 public:
+	Sunday() {};
+	~Sunday() {};
 	void handle();
 	RaceState* nextState();
+	bool end() { return true; };
 };
 
 #endif

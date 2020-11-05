@@ -3,8 +3,10 @@
 #include "RaceState.h"
 #include <iostream>
 #include "Saturday.h"
+#include "MorningPractise.h"
+#include "AfternoonQualifying.h"
 
-class Friday : RaceState {
+class Friday : public RaceState {
 
 
 public:
@@ -12,6 +14,7 @@ public:
 	~Friday(){};
 	void handle();
 	RaceState* nextState();
+	bool end() { return true; };
 };
 
 #endif

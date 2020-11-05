@@ -15,7 +15,9 @@ Race::Race(string n, double d, int t){
 	this->numTeams = t;
 	this->teams = new Team*[t];
 	this->teamCount = 0;
-	//raceState = new Friday();
+	Friday* friday = new Friday();
+	MorningPractise* practise = new MorningPractise(friday);
+	raceState = practise;
 }
 
 Race::~Race(){
@@ -30,7 +32,11 @@ bool Race::addTeam(Team* t){
 
 void Race::request(){
 	//HANDLES CHANGING OF DAYS
-	this->raceState->handle();
+	raceState->handle();
+	raceState = raceState->nextState();
+	raceState->handle();
+	raceState = raceState->nextState();
+	raceState->handle();
 }
 
 int* Race::startRace(){

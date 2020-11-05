@@ -9,7 +9,7 @@ AfternoonQualifying::AfternoonQualifying(RaceState* s){
 
 void AfternoonQualifying::handle() {
 	RaceDecorator::handle();
-	this->addFunctionlity();
+	addFunctionlity();
 }
 
 void AfternoonQualifying::addFunctionlity() {

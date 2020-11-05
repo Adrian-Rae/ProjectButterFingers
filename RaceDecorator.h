@@ -15,6 +15,8 @@ public:
 
 	virtual void addFunctionlity() = 0;
 	void setComponent(RaceState*);
+	RaceState* nextState();
+	bool end() { return false; };
 };
 
 #endif

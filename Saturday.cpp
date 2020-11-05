@@ -8,5 +8,6 @@ void Saturday::handle() {
 
 RaceState* Saturday::nextState() {
 	RaceState* state = new Sunday();
-	return state;
+	RaceDay* race = new RaceDay(state);
+	return race;
 }
