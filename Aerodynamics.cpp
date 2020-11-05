@@ -1,25 +1,10 @@
 #include "Aerodynamics.h"
 
-////////////////////////////////////////////////////////////////////////////
-Aerodynamics::Aerodynamics()
-{//DONE
-	
-}
-Aerodynamics::~Aerodynamics()
-{//DONE
-	
-}
-////////////////////////////////////////////////////////////////////////////
-void Aerodynamics::work()
-{//DONE	
+void Aerodynamics::work(){
 	cout<<"Aerodynamics Department"<<endl;
 }
-void Aerodynamics::addFunctionality()
-{//DONE	
-	
-}
-void Aerodynamics::identify()
-{//DONE	
+
+void Aerodynamics::identify(){
 	cout<<"Aerodynamics Department"<<endl;
 }
-////////////////////////////////////////////////////////////////////////////
+

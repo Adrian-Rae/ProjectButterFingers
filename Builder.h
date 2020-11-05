@@ -3,7 +3,7 @@
 
 class Builder{
 public:
-	Builder();
+	Builder() {};
 	virtual bool build(int n, int teams) = 0;
 };
 

@@ -1,17 +1,9 @@
 #include "CurrentSeason.h"
 
-////////////////////////////////////////////////////////////////////////////
-CurrentSeason::CurrentSeason()
-{//DONE
-	
+void CurrentSeason::work() {
+	ConcreteEngineer::work();
 }
-CurrentSeason::~CurrentSeason()
-{//DONE
-	
+void CurrentSeason::identify() {
+	ConcreteEngineer::work();
+	std::cout << "I am working on the current season" << std::endl;
 }
-////////////////////////////////////////////////////////////////////////////
-void CurrentSeason::work()
-{//DONE	
-	cout<<"This is for the Next Season"<<endl;
-}
-////////////////////////////////////////////////////////////////////////////

@@ -1,25 +1,21 @@
-#if !defined(DEPARTMENTDECORATOR_H)
+#ifndef DEPARTMENTDECORATOR_H
 #define DEPARTMENTDECORATOR_H
 
 
 #include <string>
 #include <iostream>
+#include "ConcreteEngineer.h"
 
-using namespace std;
-
-class DepartmentDecorator
-{
+class DepartmentDecorator : public ConcreteEngineer{
 	private:
-		//Engineer* component;
-
+		Staff* component;
 
 	public:
-		DepartmentDecorator();
-		~DepartmentDecorator();
-   		virtual void work(){}
-		virtual void addFunctionality(){}
-		virtual void identify(){}
+		DepartmentDecorator(Staff* next);
+		~DepartmentDecorator() { delete component; };
+		virtual void work();
+		virtual void identify();
 
 };
 
-#endif // DepartmentDecorator_H
+#endif

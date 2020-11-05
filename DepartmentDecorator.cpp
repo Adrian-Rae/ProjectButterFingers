@@ -1,14 +1,11 @@
  #include "DepartmentDecorator.h"
 
-////////////////////////////////////////////////////////////////////////////
-DepartmentDecorator::DepartmentDecorator()
-{//DONE
-	
+DepartmentDecorator::DepartmentDecorator(Staff* next) {
+	component = next;
 }
-DepartmentDecorator::~DepartmentDecorator()
-{//DONE
-	
+void DepartmentDecorator::work() {
+	component->work();
 }
-////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////
+void DepartmentDecorator::identify() {
+	component->identify();
+}

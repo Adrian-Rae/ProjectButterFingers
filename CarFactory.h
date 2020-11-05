@@ -2,6 +2,7 @@
 #ifndef CARFACTORY_H
 #define CARFACTORY_H
 #include "Factory.h"
+#include "FormulaOneCar.h"
 #include <iostream>
 
 using namespace std;

@@ -1,4 +1,4 @@
-#if !defined(CHASSIS_H)
+#ifndef CHASSIS_H
 #define CHASSIS_H
 
 #include "DepartmentDecorator.h"
@@ -6,18 +6,14 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
-class Chassis: public DepartmentDecorator
-{
+class Chassis: public DepartmentDecorator{
 
 	public:
-		Chassis();
-		~Chassis();
+		Chassis(Staff* next) : DepartmentDecorator(next) {};
+		~Chassis() {};
    		void work();
-		void addFunctionality();
 		void identify();
 
 };
 
-#endif // Chassis_H
+#endif 

@@ -9,6 +9,7 @@ class ConcreteStrategist;
 
 class ConcreteEngineer : public Engineer {
 public:
+	ConcreteEngineer() {};
 	ConcreteEngineer(std::string n, std::string t, Test* tester) : Engineer(n, t, tester) {};
 
 	void notify();
@@ -16,8 +17,8 @@ public:
 	int attach(Strategist* strat);
 	void detach(int index);
 
-	void work();
-	void identify();
+	virtual void work();
+	virtual void identify();
 
 	void newRace() { getTest()->resetRace(); };
 };

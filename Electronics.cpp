@@ -1,25 +1,9 @@
 #include "Electronics.h"
 
-////////////////////////////////////////////////////////////////////////////
-Electronics::Electronics()
-{//DONE
-	
-}
-Electronics::~Electronics()
-{//DONE
-	
-}
-////////////////////////////////////////////////////////////////////////////
-void Electronics::work()
-{//DONE	
+void Electronics::work(){
 	cout<<"Electronics Department"<<endl;
 }
-void Electronics::addFunctionality()
-{//DONE	
-	
-}
-void Electronics::identify()
-{//DONE	
+
+void Electronics::identify(){
 	cout<<"Electronics Department"<<endl;
 }
-////////////////////////////////////////////////////////////////////////////

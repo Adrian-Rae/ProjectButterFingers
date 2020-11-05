@@ -12,10 +12,12 @@
 class RaceBuilder: Builder{
 public:
 	RaceBuilder();
+	~RaceBuilder();
 	bool build(int n, int teams);
 	RaceCatelogue* getResult();
 private:
 	RaceCatelogue* head;
+	WheelManufacturer* manufacturer;
 };
 
 #endif

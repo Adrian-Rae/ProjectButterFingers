@@ -1,4 +1,4 @@
-#if !defined(ELECTRONICS_H)
+#ifndef ELECTRONICS_H
 #define ELECTRONICS_H
 
 #include "DepartmentDecorator.h"
@@ -12,12 +12,11 @@ class Electronics: public DepartmentDecorator
 {
 
 	public:
-		Electronics();
-		~Electronics();
+		Electronics(Staff* next) : DepartmentDecorator(next) {};
+		~Electronics() {};
    		void work();
-		void addFunctionality();
 		void identify();
 
 };
 
-#endif // Electronics_H
+#endif 

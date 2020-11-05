@@ -7,10 +7,11 @@ CarFactory::CarFactory():Factory(){
 Car* CarFactory::buildCar(){
     //Put together all required car parts
 
-    cout<<"Building the car, with fitted parts, engine and other aero stuff"<<endl;
+    cout<<"Building a car at the factory"<<endl;
     bulidChasis();
     attachParts();
-    return this->car;
+    Car* car = new FormulaOneCar();
+    return car;
 }
 
 void CarFactory::bulidChasis(){
@@ -18,5 +19,5 @@ void CarFactory::bulidChasis(){
 }
 
 void CarFactory::attachParts(){
-    cout<<"Putting in all the screws and attaching parts"<<endl;
+    cout<<"attaching parts"<<endl;
 }

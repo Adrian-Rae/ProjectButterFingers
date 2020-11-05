@@ -33,23 +33,43 @@ Team::Team(WheelManufacturer* wm, int bud, string n, int races){
 	switch (budget) {
 	case 1:
 		staff = new Staff * [4];
-		addEng(2);
+		addCEng(1);
+		staff[0] = new Aerodynamics(staff[0]);
+		staff[0] = new Chassis(staff[0]);
+		staff[0] = new Engine(staff[0]);
+		staff[0] = new Electronics(staff[0]);
+		addNEng(1);
 		addStrat(1);
 		break;
 	case 2:
-		staff = new Staff * [5];
-		addEng(2);
+		staff = new Staff * [6];
+		addCEng(2);
+		staff[0] = new Aerodynamics(staff[0]);
+		staff[0] = new Chassis(staff[0]);
+		staff[1] = new Engine(staff[1]);
+		staff[1] = new Electronics(staff[1]);
+		addNEng(1);
 		addStrat(2);
 		break;
 	case 3:
 		staff = new Staff * [8];
-		addEng(4);
+		addCEng(3);
+		staff[0] = new Aerodynamics(staff[0]);
+		staff[0] = new Chassis(staff[0]);
+		staff[1] = new Engine(staff[1]);
+		staff[2] = new Electronics(staff[2]);
+		addNEng(1);
 		addStrat(2);
 		addAssist(1);
 		break;
 	case 4:
 		staff = new Staff * [13];
-		addEng(6);
+		addCEng(4);
+		staff[0] = new Aerodynamics(staff[0]);
+		staff[1] = new Chassis(staff[1]);
+		staff[2] = new Engine(staff[2]);
+		staff[3] = new Electronics(staff[3]);
+		addNEng(2);
 		addStrat(4);
 		addAssist(2);
 		break;
@@ -139,11 +159,18 @@ void Team::setOtherEquipment(vector<string> oe) {
 	otherEquipment = oe;
 }
 
-void Team::addEng(int n) {
+void Team::addCEng(int n) {
 	ConcreteEngineer* lead = new ConcreteEngineer(to_string(staffID), name, testFacility);
 	staffID++;
 	leadEng = lead;
 	for (int x = 1; x < n; x++) {
+		ConcreteEngineer* e = new ConcreteEngineer(to_string(staffID), name, testFacility);
+		staff[staffID - 1] = e;
+		staffID++;
+	}
+}
+void Team::addNEng(int n) {
+	for (int x = 0; x < n; x++) {
 		ConcreteEngineer* e = new ConcreteEngineer(to_string(staffID), name, testFacility);
 		staff[staffID - 1] = e;
 		staffID++;

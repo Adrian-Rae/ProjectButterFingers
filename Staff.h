@@ -6,6 +6,7 @@
 
 class Staff{
 public:
+	Staff() {};
 	Staff(std::string n, std::string ty, std::string te) : name(n), type(ty), team(te) {};
 
 	virtual void identify() { std::cout << type << " " << name << " from team " << team << std::endl; };

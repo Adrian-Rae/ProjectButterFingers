@@ -21,7 +21,7 @@ void Engineer::identify() {
 }
 
 void Engineer::work() {
-	Staff::work();//TODO: get results back
+	Staff::work();
 	results = test->runTest();
 	std::cout << " on assessing the vehicle's preformance" << std::endl;
 	std::cout << "Our vehicle seem to be favouring ";

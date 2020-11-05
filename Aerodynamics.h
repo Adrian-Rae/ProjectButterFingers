@@ -8,16 +8,13 @@
 
 using namespace std;
 
-class Aerodynamics: public DepartmentDecorator
-{
-
-	public:
-		Aerodynamics();
-		~Aerodynamics();
-   		void work();
-		void addFunctionality();
-		void identify();
+class Aerodynamics: public DepartmentDecorator{
+public:
+	Aerodynamics(Staff* next) : DepartmentDecorator(next) {};
+	~Aerodynamics() {};
+   	void work();
+	void identify();
 
 };
 
-#endif // Aerodynamics_H
+#endif

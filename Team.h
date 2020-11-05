@@ -17,12 +17,16 @@
 #include "WindTunnel.h"
 #include "European.h"
 #include "NonEuropean.h"
+#include "Aerodynamics.h"
+#include "Chassis.h"
+#include "Engine.h"
+#include "Electronics.h"
 
 using namespace std;
 
-class Team
-{
+class Team{
 public:
+	//Team() {};
 	Team(WheelManufacturer* wm, int bud, string n, int races);
 	~Team();
 
@@ -62,7 +66,8 @@ private:
 	vector<string> cateringEquipment;
 	vector<string> otherEquipment;
 
-	void addEng(int);
+	void addCEng(int);
+	void addNEng(int);
 	void addStrat(int);
 	void addAssist(int);
 };
