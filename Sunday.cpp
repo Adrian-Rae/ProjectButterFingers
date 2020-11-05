@@ -2,7 +2,10 @@
 #include "RaceState.h"
 
 using namespace std;
-
+Sunday::Sunday()
+{
+	Name="Sunday";
+}
 void Sunday::handle() {
 	cout<<"Its Sunday! "<<endl;
 }
