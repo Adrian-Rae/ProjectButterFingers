@@ -1,6 +1,10 @@
 #include "Friday.h"
 
 using namespace std;
+Friday::Friday()
+{
+	Name="Friday";
+}
 
 void Friday::handle() {
 	cout<<"Its Friday! "<<endl;
