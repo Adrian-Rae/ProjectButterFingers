@@ -11,7 +11,7 @@ public:
 	virtual void handle()=0;
 	virtual RaceState* nextState()=0;
 	String getState();
-	void setState();
+	void setState(string);
 	
 };
 
