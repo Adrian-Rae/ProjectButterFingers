@@ -9,13 +9,13 @@
 class DepartmentDecorator : public ConcreteEngineer{
 	private:
 		Staff* component;
-
+		
 	public:
 		DepartmentDecorator(Staff* next);
 		~DepartmentDecorator() { delete component; };
 		virtual void work();
 		virtual void identify();
-
+		
 };
 
 #endif

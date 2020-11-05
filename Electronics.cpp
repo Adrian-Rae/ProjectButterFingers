@@ -1,6 +1,7 @@
 #include "Electronics.h"
 
 void Electronics::work(){
+	DepartmentDecorator::work();
 	cout<<"Electronics Department"<<endl;
 }
 

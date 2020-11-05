@@ -10,14 +10,15 @@ Race::Race(){
 
 Race::Race(string n, double d, int t){
 	//HANDLES RACE CREATION
-	this->raceName = n;
-	this->trackLength = d;
-	this->numTeams = t;
-	this->teams = new Team*[t];
-	this->teamCount = 0;
+	raceName = n;
+	trackLength = d;
+	numTeams = t;
+	teams = new Team*[t];
+	teamCount = 0;
 	Friday* friday = new Friday();
 	MorningPractise* practise = new MorningPractise(friday);
 	raceState = practise;
+	euro = true;
 }
 
 Race::~Race(){
@@ -32,11 +33,29 @@ bool Race::addTeam(Team* t){
 
 void Race::request(){
 	//HANDLES CHANGING OF DAYS
+	int conditions = rand() % 2;
+	if (conditions == 2)
+		conditions = -1;
+
 	raceState->handle();
+
+	for (int x = 0; x < teamCount; x++) {
+		teams[x]->prepRace(euro, conditions);
+	}
+
 	raceState = raceState->nextState();
 	raceState->handle();
+
+	for (int x = 0; x < teamCount; x++) {
+		teams[x]->race(trackLength);
+	}
+
 	raceState = raceState->nextState();
 	raceState->handle();
+
+	for (int x = 0; x < teamCount; x++) {
+		teams[x]->race(trackLength);
+	}
 }
 
 int* Race::startRace(){

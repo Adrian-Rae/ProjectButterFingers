@@ -13,7 +13,7 @@ class Strategist;
 
 class Engineer : public Staff {
 public:
-	Engineer() {};
+	Engineer() : Staff() {};
 	Engineer(std::string n, std::string t, Test* tester);
 	~Engineer();
 

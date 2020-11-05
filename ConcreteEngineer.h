@@ -9,7 +9,7 @@ class ConcreteStrategist;
 
 class ConcreteEngineer : public Engineer {
 public:
-	ConcreteEngineer() {};
+	ConcreteEngineer(): Engineer() {};
 	ConcreteEngineer(std::string n, std::string t, Test* tester) : Engineer(n, t, tester) {};
 
 	void notify();
@@ -21,6 +21,7 @@ public:
 	virtual void identify();
 
 	void newRace() { getTest()->resetRace(); };
+	
 };
 
 #endif 

@@ -6,8 +6,8 @@
 
 class Staff{
 public:
-	Staff() {};
-	Staff(std::string n, std::string ty, std::string te) : name(n), type(ty), team(te) {};
+	Staff() : isEnd(false) {};
+	Staff(std::string n, std::string ty, std::string te) : name(n), type(ty), team(te), isEnd(false){};
 
 	virtual void identify() { std::cout << type << " " << name << " from team " << team << std::endl; };
 	virtual void work()		{ std::cout << type << " " << name << " from team " << team << " is working" << std::endl; };
@@ -19,11 +19,15 @@ public:
 	std::string setName(std::string n ) { name = n ; };
 	std::string setType(std::string ty) { type = ty; };
 	std::string setTeam(std::string te) { team = te; };
+	void end() { isEnd = true; };
+	bool endOf() { return isEnd; };
+	
 
 private:
 	std::string name;
 	std::string type;
 	std::string team;
+	bool isEnd;
 
 
 };

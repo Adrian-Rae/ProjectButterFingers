@@ -6,6 +6,7 @@
 #include "RaceIterator.h"
 #include "RaceDecorator.h"
 #include <string>
+#include <random>
 #include "Team.h" /*COMBINE WITH OTHER CLASSES*/
 #include "RaceIterator.h"
 #include "Friday.h"
@@ -24,6 +25,7 @@ public:
 	double trackLength;		//Length of track - kilometres
 	int raceId;				//id of the race - is function of numRaces
 	int numTeams;			//number of teams participating in the race
+	bool euro;
 
 	Race();						//generator for catelogue
 	Race(string,double,int);	//initialises race

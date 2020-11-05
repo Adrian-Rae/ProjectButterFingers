@@ -10,8 +10,8 @@ Test::Test(Car* car, int n, int to) {
 }
 
 int Test::runTest(){
-	if (newRace) {
-		newRace = false;
+	if (getNew()) {
+		setNew(false);
 		num = 0;
 	}
 

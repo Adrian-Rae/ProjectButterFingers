@@ -57,7 +57,7 @@ private:
 
 	int budget;
 	string name;
-	static int staffID;
+	int staffID;
 	Wheel** wheels;
 	int currentTime;
 	int numRaces;

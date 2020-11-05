@@ -17,5 +17,7 @@ class Test{
 		Test(Car* car, int n, int to = 500);
 		int runTest();
 		void resetRace() { newRace = true; num++; };
+		void setNew(bool t) { newRace = t; };
+		bool getNew() { return newRace; };
 };
 #endif
