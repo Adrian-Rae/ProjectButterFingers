@@ -32,30 +32,7 @@ bool Race::addTeam(Team* t){
 
 
 void Race::request(){
-	//HANDLES CHANGING OF DAYS
-	int conditions = rand() % 2;
-	if (conditions == 2)
-		conditions = -1;
-
 	raceState->handle();
-
-	for (int x = 0; x < teamCount; x++) {
-		teams[x]->prepRace(euro, conditions);
-	}
-
-	raceState = raceState->nextState();
-	raceState->handle();
-
-	for (int x = 0; x < teamCount; x++) {
-		teams[x]->race(trackLength);
-	}
-
-	raceState = raceState->nextState();
-	raceState->handle();
-
-	for (int x = 0; x < teamCount; x++) {
-		teams[x]->race(trackLength);
-	}
 }
 
 int* Race::startRace(){

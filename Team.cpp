@@ -142,10 +142,12 @@ int Team::race(int dist) {
 }
 void Team::display() {
 	int min, sec;
-	min = currentTime / 60;
+	min = (int)currentTime / 60;
 	sec = currentTime % 60;
-
-	cout << "Team " << name << " - " << getDriver() << " - " << min << ":" << sec << endl;
+	if (sec < 10)
+		cout << "Team " << name << " - " << getDriver() << " - " << min << ":0" << sec << endl;
+	else
+		cout << "Team " << name << " - " << getDriver() << " - " << min << ":" << sec << endl;
 }
 
 void Team::setGarageEquipment(vector<string> ge) {

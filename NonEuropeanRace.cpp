@@ -11,12 +11,31 @@ NonEuropeanRace::~NonEuropeanRace(){numRaces--;}
 
 int* NonEuropeanRace::startRace() {
 	int * results = new int[numTeams];
+
+	int conditions = rand() % 2;
+	if (conditions == 2)
+		conditions = -1;
+
+	request();
+
 	for (int x = 0; x < numTeams; x++) {
-		int conditions = rand() % 2;
-		if (conditions == 2)
-			conditions = -1;
-		teams[x]->prepRace(false, conditions);
+		teams[x]->prepRace(euro, conditions);
 	}
+
+	raceState = raceState->nextState();
+	request();
+
+	for (int x = 0; x < numTeams; x++) {
+		results[x] = teams[x]->race(trackLength);
+	}
+	cout << "The results of the qualifying are: " << endl;
+	for (int x = 0; x < numTeams; x++) {
+		teams[x]->display();
+	}
+
+	raceState = raceState->nextState();
+	request();
+
 	for (int x = 0; x < numTeams; x++) {
 		results[x] = teams[x]->race(trackLength);
 	}

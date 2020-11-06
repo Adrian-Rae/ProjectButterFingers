@@ -18,7 +18,7 @@ bool RaceBuilder::build(int n, int teams) {
 		manufacturer = new WheelManufacturer();
 
 		for (int y = 0; y < teams; y++) {
-			team[y] = new Team(manufacturer, rand()%4 + 1, to_string(y), n);
+			team[y] = new Team(manufacturer, rand()%4 + 1, to_string(y+1), n);
 		}
 
 		for (int x = 0; x < n; x++) {
