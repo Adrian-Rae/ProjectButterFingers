@@ -2,8 +2,9 @@
 
 void Chassis::work(){
 	DepartmentDecorator::work();
-	cout<<"Chassis Department"<<endl;
+	cout<<"\t  *** Chassis Department ***"<<endl;
 }
 void Chassis::identify(){
-	cout<<"Chassis Department"<<endl;
+	DepartmentDecorator::identify();
+	cout<<"\t  *** Chassis Department ***"<<endl;
 }

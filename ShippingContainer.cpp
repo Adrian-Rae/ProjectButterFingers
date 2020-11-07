@@ -4,8 +4,7 @@ using namespace std;
 
 ShippingContainer::ShippingContainer()
 {
-	cout<<"Shipping Container has been created!"<<endl;
-	//status.push_back("has been packed");
+	cout<<"\t->  Shipping Container has been created!"<<endl;
 	
 }
 
@@ -36,7 +35,7 @@ void ShippingContainer::setCateringEquipment(vector<string> cEquip)
 
 vector<string> ShippingContainer::getCateringEquipment()
 {
-	return cateringEquipment;// + status;
+	return cateringEquipment;
 }
 
 void ShippingContainer::addOtherEquipment(string oEquip)
@@ -51,7 +50,7 @@ void ShippingContainer::setOtherEquipment(vector<string> oEquip)
 
 vector<string> ShippingContainer::getOtherEquipment()
 {
-	return otherEquipment;// + status;
+	return otherEquipment;
 }
 
 string ShippingContainer::TypeofTransporter()

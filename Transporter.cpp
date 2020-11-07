@@ -4,5 +4,5 @@ using namespace std;
 
 Transporter::Transporter()
 {
-	cout<<"Transporter has been created!"<<endl;
+	cout<<"\t->  Transporter has been created!"<<endl;
 }

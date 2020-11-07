@@ -17,14 +17,14 @@ Engineer::~Engineer() {
 
 void Engineer::identify() {
 	Staff::identify();
-	std::cout << "We are reporting to " << observers.size() << " strategists" << std::endl;
+	std::cout << "\t->  We are reporting to " << observers.size() << " strategists" << std::endl;
 }
 
 void Engineer::work() {
 	Staff::work();
 	results = test->runTest();
-	std::cout << " on assessing the vehicle's preformance" << std::endl;
-	std::cout << "Our vehicle seem to be favouring ";
+	std::cout << "\t->  Assessing the vehicle's preformance" << std::endl;
+	std::cout << "\t->  Our vehicle seem to be favouring ";
 	if (results > 0)
 		std::cout << "speed" << std::endl;
 	else if (results < 0)

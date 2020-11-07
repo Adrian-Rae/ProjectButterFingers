@@ -4,7 +4,7 @@ using namespace std;
 
 AbstractFactory::AbstractFactory()
 {
-	cout<<"Abstract Factory has been created";
+	cout<<"\t->  Abstract Factory has been created"<< endl;
 
 }
  		

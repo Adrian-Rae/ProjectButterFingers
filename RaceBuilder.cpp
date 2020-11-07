@@ -26,14 +26,14 @@ bool RaceBuilder::build(int n, int teams) {
 			int dist = (rand() % 8) + 4;
 
 			if (euro == 1) {
-				Race* race = new EuropeanRace(to_string(x), dist, teams);
+				Race* race = new EuropeanRace(to_string(x+1), dist, teams);
 				for (int y = 0; y < teams; y++) {
 					race->addTeam(team[y]);
 				}
 				catelouge->addRace(race);
 			}
 			else {
-				Race* race = new NonEuropeanRace(to_string(x), dist, teams);
+				Race* race = new NonEuropeanRace(to_string(x+1), dist, teams);
 				for (int y = 0; y < teams; y++) {
 					race->addTeam(team[y]);
 				}

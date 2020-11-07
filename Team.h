@@ -42,6 +42,7 @@ public:
 	int getTime() { return currentTime; };
 
 private:
+	int sNum;
 	Staff** staff;
 	ConcreteEngineer* leadEng;
 	ConcreteStrategist* leadStrat;

@@ -12,5 +12,5 @@ void MorningPractise::handle() {
 }
 
 void MorningPractise::addFunctionlity() {
-	cout<<"Shall we practise"<<endl;
+	cout<<"< Morning practise >"<<endl;
 }

@@ -7,7 +7,7 @@ Sunday::Sunday()
 	setState("Sunday");
 }
 void Sunday::handle() {
-	cout<<"Its Sunday! "<<endl;
+	cout<<"[ Sunday ] "<<endl;
 }
 
 RaceState* Sunday::nextState() {

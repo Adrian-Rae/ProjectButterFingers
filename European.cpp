@@ -4,7 +4,7 @@ using namespace std;
 
 European::European()
 {	
-	cout << "European Factory has been created" << endl;
+	cout << "\t->  European Factory has been created" << endl;
 }
 
 Transporter* European::CreateTransporter()

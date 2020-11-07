@@ -2,7 +2,7 @@
 
 TruckContainer::TruckContainer()
 {
-	cout<<"Truck Container has been created!"<<endl;
+	cout<<"\t->  Truck Container has been created!"<<endl;
 	
 }
 

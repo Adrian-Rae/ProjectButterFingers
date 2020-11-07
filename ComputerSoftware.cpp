@@ -3,7 +3,7 @@
 ComputerSoftware::ComputerSoftware(Car* car):SimulatorTest(car){}
 
 int ComputerSoftware::test(){
-	cout<<"We are testing the vehicle via computer software"<<endl;
+	cout<<"\t    <> We are testing the vehicle via computer software"<<endl;
 
 	int temp = 0;
 	int speed = getVehicle()->getMaxSpeed();

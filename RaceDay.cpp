@@ -12,5 +12,5 @@ void RaceDay::handle() {
 }
 
 void RaceDay::addFunctionlity() {
-	cout<<"Time to race!"<<endl;
+	cout<<"< Race Day >"<<endl;
 }

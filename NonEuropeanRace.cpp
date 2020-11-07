@@ -21,6 +21,8 @@ int* NonEuropeanRace::startRace() {
 	for (int x = 0; x < numTeams; x++) {
 		teams[x]->prepRace(euro, conditions);
 	}
+	cout << "__________________________________________________________________________" << endl;
+	cout << endl;
 
 	raceState = raceState->nextState();
 	request();

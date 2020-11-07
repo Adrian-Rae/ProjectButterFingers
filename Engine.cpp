@@ -2,9 +2,10 @@
 
 void Engine::work(){	
 	DepartmentDecorator::work();
-	cout<<"Engine Department"<<endl;
+	cout<<"\t  *** Engine Department ***"<<endl;
 }
 
 void Engine::identify(){
-	cout<<"Engine Department"<<endl;
+	DepartmentDecorator::identify();
+	cout<<"\t  *** Engine Department ***"<<endl;
 }

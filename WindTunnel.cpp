@@ -3,7 +3,7 @@
 WindTunnel::WindTunnel(Car* car):SimulatorTest(car){}
 
 int WindTunnel::test(){
-	cout<<"We are testing the vehicle in the wind tunnel"<<endl;
+	cout<<"\t    <> We are testing the vehicle in the wind tunnel"<<endl;
 
 	int temp = 0;
 	int speed = getVehicle()->getMaxSpeed();

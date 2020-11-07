@@ -18,5 +18,5 @@ void Strategist::identify() {
 }
 void Strategist::work() {
 	Staff::work();
-	std::cout << " on crafting the perfect strategy" << std::endl;
+	std::cout << "\t->  Working on crafting the perfect strategy" << std::endl;
 }

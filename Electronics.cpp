@@ -2,9 +2,10 @@
 
 void Electronics::work(){
 	DepartmentDecorator::work();
-	cout<<"Electronics Department"<<endl;
+	cout<<"\t  *** Electronics Department ***"<<endl;
 }
 
 void Electronics::identify(){
-	cout<<"Electronics Department"<<endl;
+	DepartmentDecorator::identify();
+	cout<<"\t  *** Electronics Department ***"<<endl;
 }

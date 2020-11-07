@@ -2,10 +2,11 @@
 
 void Aerodynamics::work(){
 	DepartmentDecorator::work();
-	cout<<"Aerodynamics Department"<<endl;
+	cout<<"\t  *** Aerodynamics Department ***"<<endl;
 }
 
 void Aerodynamics::identify(){
-	cout<<"Aerodynamics Department"<<endl;
+	DepartmentDecorator::identify();
+	cout<<"\t  *** Aerodynamics Department ***"<<endl;
 }
 

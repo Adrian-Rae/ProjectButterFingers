@@ -7,10 +7,10 @@
 class Staff{
 public:
 	Staff() : isEnd(false) {};
-	Staff(std::string n, std::string ty, std::string te) : name(n), type(ty), team(te), isEnd(false){};
+	Staff(std::string te, std::string n, std::string ty) : name(n), type(ty), team(te), isEnd(false){};
 
-	virtual void identify() { std::cout << type << " " << name << " from team " << team << std::endl; };
-	virtual void work()		{ std::cout << type << " " << name << " from team " << team << " is working" << std::endl; };
+	virtual void identify() { std::cout << "\t->  " << type << " " << name << " from team " << team << std::endl; };
+	virtual void work()		{ std::cout << "\t->  " << type << " " << name << " from team " << team << " is working" << std::endl; };
 
 	std::string getName() { return name; };
 	std::string getType() { return type; };

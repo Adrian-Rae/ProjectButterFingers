@@ -4,8 +4,7 @@ using namespace std;
 
 NonEuropean::NonEuropean()
 {	
-	//AbstractFactory(); not sure about this
-	cout<<"Non-European Factory has been created"<<endl;
+	cout<<"\t->  Non-European Factory has been created"<<endl;
 }
 
 Transporter* NonEuropean::CreateTransporter()
