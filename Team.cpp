@@ -157,7 +157,7 @@ void Team::prepRace(bool euro, int conditions) {
 	cout << endl;
 	std::cout << "[*]\tLastly we have to ensure we have the right tires for the track conditions and our car: " << std::endl;
 	cout << endl;
-	wheels = leadStrat->getWheels(conditions);
+	wheels = leadStrat->getWheels(conditions);//undefined reference here
 }
 int Team::race(int dist) {
 	double results = (double)dist / ((double)raceCar->getMaxSpeed() / 3600.0) ;
@@ -206,12 +206,12 @@ void Team::addNEng(int n) {
 	}
 }
 void Team::addStrat(int n) {
-	ConcreteStrategist* lead = new ConcreteStrategist(to_string(staffID+1), name, leadEng, manufacturer, 0);
+	ConcreteStrategist* lead = new ConcreteStrategist(to_string(staffID+1), name, leadEng, manufacturer, 0);//undefined reference here
 	staff[staffID] = lead;
 	staffID++;
 	leadStrat = lead;
 	for (int x = 1; x < n; x++) {
-		ConcreteStrategist* cs = new ConcreteStrategist(to_string(staffID+1), name, leadEng, manufacturer, x);
+		ConcreteStrategist* cs = new ConcreteStrategist(to_string(staffID+1), name, leadEng, manufacturer, x);//undefined reference here
 		staff[staffID] = cs;
 		staffID++;
 	}
