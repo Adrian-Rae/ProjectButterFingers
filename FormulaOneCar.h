@@ -11,7 +11,7 @@ private:
 
 public:
     FormulaOneCar();
-    ~FormulaOneCar() {};;
+    ~FormulaOneCar() {};
     void displayCarInfo();
 };
 

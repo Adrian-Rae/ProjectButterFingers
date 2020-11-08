@@ -3,7 +3,7 @@
 #include "RaceState.h"
 #include <iostream>
 #include "Saturday.h"
-#include "MorningPractise.h"
+#include "MorningPractice.h"
 #include "AfternoonQualifying.h"
 
 class Friday : public RaceState {

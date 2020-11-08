@@ -10,7 +10,7 @@
 #include "Team.h" /*COMBINE WITH OTHER CLASSES*/
 #include "RaceIterator.h"
 #include "Friday.h"
-#include "MorningPractise.h"
+#include "MorningPractice.h"
 using namespace std;
 
 class Race : public Aggregate {

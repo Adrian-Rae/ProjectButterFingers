@@ -6,6 +6,7 @@
 
 class RaceManager{
 public:
+	void mainRun();
 	void display(int** standings, int num);
 	int** sortResults(int* list, int** sort, int num);
 	int** sortResults(int** sort, int num);
