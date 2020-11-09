@@ -8,6 +8,11 @@
 
 class WheelManufacturer{
 	public:
+		WheelManufacturer();
 		Wheel** getWheelSet(int conditionNum);
+private:
+	SoftWheel* soft;
+	MediumWheel* medium;
+	HardWheel* hard;
 };
 #endif

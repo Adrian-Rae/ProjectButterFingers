@@ -64,7 +64,7 @@ void RaceManager::mainRun()
 		    cout << "**\tIt's time to start the season's races!\t**" << endl;
 		    cout << "Type in 'Y' or 'N' please" << endl;
 		    cin>>dummy;
-		    if(dummy == "Y"){
+		    if(dummy == "Y" || start == "y"){
 			    cout << "__________________________________________________________________________" << endl;
 			    cout << endl;
 
@@ -73,7 +73,7 @@ void RaceManager::mainRun()
 				cout << endl;
 				cout << "**Should we continue to the race?** Type 'Y' or 'N' " << endl;
 				cin >> dummy;
-				if(dummy == "Y"){
+				if(dummy == "Y" || start == "y"){
 					cout << "__________________________________________________________________________" << endl;
 					cout << endl;
 

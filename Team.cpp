@@ -72,7 +72,7 @@ Team::Team(WheelManufacturer* wm, int bud, string n, int races){
 		addCEng(3);
 		staff[1] = new Aerodynamics(staff[1]);
 		staff[1] = new Chassis(staff[1]);
-		staff[1] = new Engine(staff[2]);
+		staff[2] = new Engine(staff[2]);
 		staff[3] = new Electronics(staff[3]);
 		addNEng(1);
 		addStrat(2);
